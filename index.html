@@ -397,37 +397,52 @@
 
     .hero__form-card .form__title {
       font-family: var(--serif);
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: var(--white);
+      font-size: 1.125rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.9);
       margin-bottom: 1.5rem;
       padding-bottom: 1rem;
       border-bottom: 1px solid rgba(255,255,255,0.10);
+      letter-spacing: -0.01em;
     }
 
     /* Dark form variant (hero) */
     .form--dark .form__label {
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.45);
+    }
+
+    .form--dark .form__label abbr {
+      color: var(--burgundy);
     }
 
     .form--dark .form__input,
     .form--dark .form__select,
     .form--dark .form__textarea {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.10);
+      border-bottom-color: rgba(255,255,255,0.18);
       color: var(--white);
+    }
+
+    .form--dark .form__input:hover,
+    .form--dark .form__select:hover,
+    .form--dark .form__textarea:hover {
+      border-color: rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.07);
     }
 
     .form--dark .form__input::placeholder,
     .form--dark .form__select::placeholder,
     .form--dark .form__textarea::placeholder {
-      color: rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.25);
     }
 
     .form--dark .form__input:focus,
     .form--dark .form__select:focus,
     .form--dark .form__textarea:focus {
       border-color: var(--burgundy);
+      background: rgba(255,255,255,0.08);
     }
 
     .form--dark .form__select {
@@ -435,26 +450,45 @@
     }
 
     .form--dark .form__select option {
-      background: var(--black);
+      background: #1a1a1a;
       color: var(--white);
     }
 
     .form--dark .form__select-wrap::after {
-      color: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.35);
+    }
+    .form--dark .form__select-wrap:focus-within::after {
+      background: var(--burgundy);
+    }
+
+    .form--dark .form__privacy {
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(255,255,255,0.08);
     }
 
     .form--dark .form__privacy-text {
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.4);
+    }
+
+    .form--dark .form__privacy-text a {
+      color: rgba(255,255,255,0.7);
+    }
+    .form--dark .form__privacy-text a:hover {
+      color: var(--white);
     }
 
     /* Trust elements */
     .form__trust {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.5rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0;
       margin-top: 1.25rem;
       padding-top: 1.25rem;
       border-top: 1px solid var(--border);
+    }
+
+    .form__trust .trust-item {
+      flex: 0 0 50%;
     }
 
     .form--dark .form__trust {
@@ -1094,23 +1128,25 @@
     .form__title {
       font-family: var(--serif);
       font-size: 1.375rem;
-      font-weight: 400;
+      font-weight: 300;
+      font-style: italic;
       color: var(--black);
       margin-bottom: 2rem;
       padding-bottom: 1.25rem;
       border-bottom: 1px solid var(--border);
+      letter-spacing: -0.01em;
     }
 
     .form__grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
+      gap: 1.5rem 1.25rem;
     }
 
     .form__field {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
     .form__field--full {
@@ -1119,27 +1155,44 @@
 
     .form__label {
       font-family: var(--sans);
-      font-size: 0.625rem;
+      font-size: 0.5625rem;
       font-weight: 500;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--mid-gray);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .form__label abbr {
+      text-decoration: none;
+      color: var(--burgundy);
+      font-size: 0.7rem;
     }
 
     .form__input,
     .form__select,
     .form__textarea {
       font-family: var(--serif);
-      font-size: 1rem;
+      font-size: 0.9375rem;
       font-weight: 300;
       color: var(--black);
       background: var(--white);
       border: 1px solid var(--border);
+      border-bottom-width: 2px;
       padding: 0.875rem 1rem;
       width: 100%;
-      transition: border-color 0.25s;
+      transition: border-color 0.2s, background 0.2s;
       appearance: none;
       -webkit-appearance: none;
+      border-radius: 0;
+    }
+
+    .form__input:hover,
+    .form__select:hover,
+    .form__textarea:hover {
+      border-color: rgba(1,0,0,0.25);
     }
 
     .form__input:focus,
@@ -1147,37 +1200,55 @@
     .form__textarea:focus {
       outline: none;
       border-color: var(--burgundy);
+      border-bottom-color: var(--burgundy);
+      background: #fffcfa;
     }
 
-    .form__textarea { resize: vertical; min-height: 100px; }
+    .form__textarea {
+      resize: none;
+      min-height: 96px;
+      line-height: 1.6;
+    }
 
     .form__select-wrap {
       position: relative;
     }
     .form__select-wrap::after {
-      content: '↓';
+      content: '';
       position: absolute;
       right: 1rem;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 0.8rem;
-      color: var(--mid-gray);
+      width: 10px;
+      height: 6px;
+      background: var(--mid-gray);
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
       pointer-events: none;
+      transition: background 0.2s;
+    }
+    .form__select-wrap:focus-within::after {
+      background: var(--burgundy);
+    }
+
+    .form__select {
+      padding-right: 2.5rem;
+      cursor: pointer;
     }
 
     .form__privacy {
       display: flex;
-      gap: 0.75rem;
+      gap: 0.875rem;
       align-items: flex-start;
+      padding: 1rem;
+      background: rgba(1,0,0,0.02);
+      border: 1px solid var(--border);
     }
 
     .form__checkbox {
-      width: 14px;
-      height: 14px;
-      border: 1px solid var(--border);
-      background: var(--white);
+      width: 16px;
+      height: 16px;
       flex-shrink: 0;
-      margin-top: 0.2rem;
+      margin-top: 0.1rem;
       cursor: pointer;
       accent-color: var(--burgundy);
     }
@@ -1187,18 +1258,19 @@
       font-size: 0.6875rem;
       font-weight: 300;
       color: var(--mid-gray);
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .form__privacy-text a {
+      color: var(--black);
       text-decoration: underline;
       text-underline-offset: 2px;
     }
-    .form__privacy-text a:hover { color: var(--black); }
+    .form__privacy-text a:hover { color: var(--burgundy); }
 
     .form__submit {
       width: 100%;
-      padding: 1.1rem;
+      padding: 1.15rem 1.5rem;
       background: var(--burgundy);
       color: var(--white);
       font-family: var(--sans);
@@ -1206,21 +1278,52 @@
       font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      transition: background 0.3s var(--ease-out);
-      margin-top: 0.5rem;
+      transition: background 0.3s var(--ease-out), letter-spacing 0.3s var(--ease-out);
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      border: none;
     }
-    .form__submit:hover { background: var(--black); }
+    .form__submit::after {
+      content: '→';
+      font-size: 0.875rem;
+      transition: transform 0.3s var(--ease-out);
+      font-family: Georgia, serif;
+    }
+    .form__submit:hover {
+      background: var(--black);
+      letter-spacing: 0.22em;
+    }
+    .form__submit:hover::after {
+      transform: translateX(4px);
+    }
     .form__submit:disabled {
       opacity: 0.6;
       cursor: not-allowed;
+    }
+    .form__submit:disabled::after {
+      display: none;
     }
 
     .form__label-opt {
       font-weight: 300;
       letter-spacing: 0;
       text-transform: none;
-      opacity: 0.55;
-      font-size: 0.625rem;
+      opacity: 0.5;
+      font-size: 0.5625rem;
+    }
+
+    .form__error {
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      color: var(--burgundy);
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--burgundy);
+      background: rgba(140,24,34,0.04);
+      margin-top: 0.75rem;
     }
 
     /* Steps */
