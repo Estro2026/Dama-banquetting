@@ -288,10 +288,9 @@
     ========================================= */
     .hero {
       position: relative;
-      height: 100vh;
-      min-height: 640px;
+      min-height: 100vh;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       overflow: hidden;
     }
 
@@ -312,11 +311,10 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(
-        to bottom,
-        rgba(1,0,0,0.15) 0%,
-        rgba(1,0,0,0.02) 40%,
-        rgba(1,0,0,0.55) 75%,
-        rgba(1,0,0,0.78) 100%
+        105deg,
+        rgba(1,0,0,0.72) 0%,
+        rgba(1,0,0,0.55) 45%,
+        rgba(1,0,0,0.45) 100%
       );
     }
 
@@ -324,9 +322,13 @@
       position: relative;
       z-index: 1;
       width: 100%;
-      padding: 0 2rem 5rem;
       max-width: 1280px;
       margin: 0 auto;
+      padding: 7rem 2rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
     }
 
     .hero__label {
@@ -342,11 +344,10 @@
     .hero__title {
       font-family: var(--serif);
       font-weight: 300;
-      font-size: clamp(2.75rem, 6vw, 5.5rem);
+      font-size: clamp(2.5rem, 5vw, 4.75rem);
       line-height: 1.06;
       color: var(--white);
-      max-width: 780px;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
       letter-spacing: -0.01em;
     }
 
@@ -358,18 +359,137 @@
     .hero__subtitle {
       font-family: var(--serif);
       font-weight: 300;
-      font-size: clamp(1rem, 1.6vw, 1.2rem);
-      color: rgba(255,255,255,0.75);
-      max-width: 520px;
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: rgba(255,255,255,0.72);
       line-height: 1.65;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
-    .hero__actions {
+    .hero__discover {
+      display: inline-flex;
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      gap: 0.5rem;
+      transition: color 0.3s;
+    }
+    .hero__discover:hover { color: rgba(255,255,255,0.9); }
+
+    /* Hero form card */
+    .hero__form-col {
       display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
       align-items: center;
+      justify-content: flex-end;
+    }
+
+    .hero__form-card {
+      background: rgba(1,0,0,0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.10);
+      padding: 2.25rem 2rem;
+      width: 100%;
+      max-width: 460px;
+    }
+
+    .hero__form-card .form__title {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+    /* Dark form variant (hero) */
+    .form--dark .form__label {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .form--dark .form__input,
+    .form--dark .form__select,
+    .form--dark .form__textarea {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.12);
+      color: var(--white);
+    }
+
+    .form--dark .form__input::placeholder,
+    .form--dark .form__select::placeholder,
+    .form--dark .form__textarea::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+
+    .form--dark .form__input:focus,
+    .form--dark .form__select:focus,
+    .form--dark .form__textarea:focus {
+      border-color: var(--burgundy);
+    }
+
+    .form--dark .form__select {
+      color: rgba(255,255,255,0.85);
+    }
+
+    .form--dark .form__select option {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .form--dark .form__select-wrap::after {
+      color: rgba(255,255,255,0.4);
+    }
+
+    .form--dark .form__privacy-text {
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* Trust elements */
+    .form__trust {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 1rem;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .form--dark .form__trust {
+      border-top-color: rgba(255,255,255,0.08);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--sans);
+      font-size: 0.625rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+    }
+
+    .form--dark .trust-item {
+      color: rgba(255,255,255,0.4);
+    }
+
+    .trust-item::before {
+      content: '';
+      display: block;
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      background: var(--burgundy);
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpolyline points='2.5 8 6.5 12 13.5 4' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpolyline points='2.5 8 6.5 12 13.5 4' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      mask-size: contain;
+      -webkit-mask-size: contain;
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
     }
 
     .hero__scroll {
@@ -1308,12 +1428,16 @@
       .intro__inner { grid-template-columns: 1fr; gap: 2.5rem; }
 
       .testimonials { grid-template-columns: 1fr; gap: 0; }
+
+      .hero__content { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero__form-col { justify-content: center; }
+      .hero__form-card { max-width: 100%; }
     }
 
     @media (max-width: 768px) {
       .section { padding: 4rem 0; }
 
-      .hero__content { padding: 0 1.25rem 4rem; }
+      .hero__content { padding: 6rem 1.25rem 3rem; gap: 2rem; }
 
       .numeri__grid { grid-template-columns: 1fr 1fr; }
 
@@ -1347,8 +1471,8 @@
 
     @media (max-width: 480px) {
       .container, .container--narrow { padding: 0 1.25rem; }
-      .hero__actions { flex-direction: column; align-items: flex-start; }
       .btn { padding: 0.9rem 1.75rem; }
+      .form__trust { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -1384,22 +1508,109 @@
     </div>
 
     <div class="hero__content">
-      <span class="hero__label">Catering Aziendale · Milano</span>
-      <h1 class="hero__title">
-        L'artigiano visionario<br/>
-        del <em>banqueting di lusso</em>
-      </h1>
-      <p class="hero__subtitle">
-        Ogni evento firmato Dama24 è un rituale di accoglienza.<br/>
-        Cucina sartoriale, mise en place d'autore, servizio impeccabile.
-      </p>
-      <div class="hero__actions">
-        <a href="#preventivo" class="btn btn--primary">
-          <span>Richiedi il tuo preventivo</span>
+      <!-- Colonna testo -->
+      <div class="hero__text">
+        <span class="hero__label">Catering Aziendale · Milano</span>
+        <h1 class="hero__title">
+          L'artigiano visionario<br/>
+          del <em>banqueting di lusso</em>
+        </h1>
+        <p class="hero__subtitle">
+          Ogni evento firmato Dama24 è un rituale di accoglienza.<br/>
+          Cucina sartoriale, mise en place d'autore, servizio impeccabile.
+        </p>
+        <a href="#servizi" class="hero__discover" aria-label="Scopri i nostri servizi di catering">
+          Scopri i servizi ↓
         </a>
-        <a href="#servizi" class="btn btn--outline-white">
-          Scopri i servizi
-        </a>
+      </div>
+
+      <!-- Colonna form -->
+      <div class="hero__form-col">
+        <div class="hero__form-card">
+          <p class="form__title">Ricevi una proposta personalizzata</p>
+          <form class="form form--dark dama-form"
+                id="hero-form"
+                novalidate
+                aria-label="Form preventivo hero">
+            <div class="form__grid">
+              <div class="form__field">
+                <label class="form__label" for="h-nome">Nome <abbr title="Campo obbligatorio" aria-label="obbligatorio">*</abbr></label>
+                <input class="form__input" type="text" id="h-nome" name="nome"
+                       autocomplete="given-name" required aria-required="true"
+                       placeholder="Il tuo nome" />
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="h-azienda">Azienda <abbr title="Campo obbligatorio" aria-label="obbligatorio">*</abbr></label>
+                <input class="form__input" type="text" id="h-azienda" name="azienda"
+                       autocomplete="organization" required aria-required="true"
+                       placeholder="Nome azienda" />
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="h-email">Email <abbr title="Campo obbligatorio" aria-label="obbligatorio">*</abbr></label>
+                <input class="form__input" type="email" id="h-email" name="email"
+                       autocomplete="email" required aria-required="true"
+                       placeholder="La tua email" />
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="h-telefono">Telefono <abbr title="Campo obbligatorio" aria-label="obbligatorio">*</abbr></label>
+                <input class="form__input" type="tel" id="h-telefono" name="telefono"
+                       autocomplete="tel" required aria-required="true"
+                       placeholder="Numero di telefono" />
+              </div>
+
+              <div class="form__field form__field--full">
+                <label class="form__label" for="h-tipo-evento">Tipo evento <span style="opacity:.6;font-weight:300;letter-spacing:0;">(facoltativo)</span></label>
+                <div class="form__select-wrap">
+                  <select class="form__select" id="h-tipo-evento" name="tipo_evento">
+                    <option value="">Seleziona il tipo di evento</option>
+                    <option value="banqueting">Banqueting aziendale</option>
+                    <option value="coffee-break">Coffee Break &amp; Lunch</option>
+                    <option value="convention">Convention &amp; Fiere</option>
+                    <option value="inaugurazione">Inaugurazione &amp; Opening</option>
+                    <option value="mixology">Mixology</option>
+                    <option value="event-styling">Event Styling</option>
+                    <option value="altro">Altro / Non so ancora</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form__field form__field--full">
+                <label class="form__label" for="h-messaggio">Messaggio <span style="opacity:.6;font-weight:300;letter-spacing:0;">(facoltativo)</span></label>
+                <textarea class="form__textarea" id="h-messaggio" name="messaggio"
+                          rows="3"
+                          placeholder="Data, numero ospiti, note..."></textarea>
+              </div>
+
+              <div class="form__field form__field--full">
+                <div class="form__privacy">
+                  <input class="form__checkbox" type="checkbox"
+                         id="h-privacy" name="privacy"
+                         required aria-required="true" />
+                  <label class="form__privacy-text" for="h-privacy">
+                    Ho letto l'<a href="/privacy-policy" target="_blank" rel="noopener">informativa privacy</a>
+                    e acconsento al trattamento dei miei dati (GDPR 679/2016). *
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__error" id="hero-form-message" role="alert" aria-live="polite" style="display:none;"></div>
+
+            <button type="submit" class="form__submit btn">
+              Ricevi una proposta personalizzata
+            </button>
+
+            <div class="form__trust" aria-label="Perché sceglierci">
+              <span class="trust-item">Preventivo gratuito</span>
+              <span class="trust-item">Risposta entro 24 ore</span>
+              <span class="trust-item">Progetto su misura</span>
+              <span class="trust-item">Servizio completo</span>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
 
@@ -1767,60 +1978,42 @@
         </div>
 
         <div>
-          <form class="form" id="lead-form" novalidate aria-labelledby="form-title">
+          <form class="form dama-form" id="lead-form" novalidate aria-labelledby="form-title">
             <h3 class="form__title">Richiedi il preventivo</h3>
             <div class="form__grid">
               <div class="form__field">
-                <label class="form__label" for="nome">Nome *</label>
+                <label class="form__label" for="nome">Nome <abbr title="Campo obbligatorio" aria-label="obbligatorio">*</abbr></label>
                 <input class="form__input" type="text" id="nome" name="nome"
-                       autocomplete="given-name" required
-                       aria-required="true"
+                       autocomplete="given-name" required aria-required="true"
                        placeholder="Il tuo nome" />
               </div>
 
               <div class="form__field">
-                <label class="form__label" for="cognome">Cognome *</label>
-                <input class="form__input" type="text" id="cognome" name="cognome"
-                       autocomplete="family-name" required
-                       aria-required="true"
-                       placeholder="Il tuo cognome" />
-              </div>
-
-              <div class="form__field">
-                <label class="form__label" for="azienda">Azienda</label>
+                <label class="form__label" for="azienda">Azienda <abbr title="Campo obbligatorio" aria-label="obbligatorio">*</abbr></label>
                 <input class="form__input" type="text" id="azienda" name="azienda"
-                       autocomplete="organization"
+                       autocomplete="organization" required aria-required="true"
                        placeholder="Nome azienda" />
               </div>
 
               <div class="form__field">
-                <label class="form__label" for="citta">Città *</label>
-                <input class="form__input" type="text" id="citta" name="citta"
-                       required aria-required="true"
-                       placeholder="Città dell'evento" />
-              </div>
-
-              <div class="form__field">
-                <label class="form__label" for="email">Email *</label>
+                <label class="form__label" for="email">Email <abbr title="Campo obbligatorio" aria-label="obbligatorio">*</abbr></label>
                 <input class="form__input" type="email" id="email" name="email"
-                       autocomplete="email" required
-                       aria-required="true"
+                       autocomplete="email" required aria-required="true"
                        placeholder="La tua email" />
               </div>
 
               <div class="form__field">
-                <label class="form__label" for="telefono">Telefono</label>
+                <label class="form__label" for="telefono">Telefono <abbr title="Campo obbligatorio" aria-label="obbligatorio">*</abbr></label>
                 <input class="form__input" type="tel" id="telefono" name="telefono"
-                       autocomplete="tel"
+                       autocomplete="tel" required aria-required="true"
                        placeholder="Numero di telefono" />
               </div>
 
               <div class="form__field form__field--full">
-                <label class="form__label" for="servizio">Servizio richiesto *</label>
+                <label class="form__label" for="tipo-evento">Tipo evento <span style="opacity:.55;font-weight:300;letter-spacing:0;">(facoltativo)</span></label>
                 <div class="form__select-wrap">
-                  <select class="form__select" id="servizio" name="servizio"
-                          required aria-required="true">
-                    <option value="">Seleziona il servizio</option>
+                  <select class="form__select" id="tipo-evento" name="tipo_evento">
+                    <option value="">Seleziona il tipo di evento</option>
                     <option value="banqueting">Banqueting aziendale</option>
                     <option value="coffee-break">Coffee Break &amp; Lunch</option>
                     <option value="convention">Convention &amp; Fiere</option>
@@ -1833,7 +2026,7 @@
               </div>
 
               <div class="form__field form__field--full">
-                <label class="form__label" for="messaggio">Descrivi il tuo evento</label>
+                <label class="form__label" for="messaggio">Messaggio <span style="opacity:.55;font-weight:300;letter-spacing:0;">(facoltativo)</span></label>
                 <textarea class="form__textarea" id="messaggio" name="messaggio"
                           rows="4"
                           placeholder="Raccontaci la data, il numero di ospiti, il tipo di evento e tutto ciò che ritieni utile."></textarea>
@@ -1852,11 +2045,18 @@
               </div>
             </div>
 
-            <div id="form-message" role="alert" aria-live="polite" style="display:none;"></div>
+            <div class="form__error" id="form-message" role="alert" aria-live="polite" style="display:none;"></div>
 
-            <button type="submit" class="form__submit btn" id="form-submit">
-              Invia la richiesta
+            <button type="submit" class="form__submit btn">
+              Ricevi una proposta personalizzata
             </button>
+
+            <div class="form__trust" aria-label="Perché sceglierci">
+              <span class="trust-item">Preventivo gratuito</span>
+              <span class="trust-item">Risposta entro 24 ore</span>
+              <span class="trust-item">Progetto su misura</span>
+              <span class="trust-item">Servizio completo</span>
+            </div>
           </form>
         </div>
       </div>
@@ -2123,40 +2323,70 @@
       });
     });
 
-    // Form submission
-    const form = document.getElementById('lead-form');
-    const submitBtn = document.getElementById('form-submit');
-    const formMessage = document.getElementById('form-message');
+    // ── Shared form handler ──────────────────────────────────────────────
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const required = form.querySelectorAll('[required]');
+    function validateForm(form) {
+      const msgEl = form.querySelector('.form__error');
       let valid = true;
 
-      required.forEach(field => {
-        field.style.borderColor = '';
-        if (!field.value.trim() || (field.type === 'checkbox' && !field.checked)) {
+      // Reset all borders
+      form.querySelectorAll('.form__input, .form__select, .form__textarea, .form__checkbox')
+          .forEach(el => el.style.borderColor = '');
+
+      // Check required fields
+      form.querySelectorAll('[required]').forEach(field => {
+        const empty = field.type === 'checkbox'
+          ? !field.checked
+          : !field.value.trim();
+
+        if (empty) {
           field.style.borderColor = '#8c1822';
           valid = false;
         }
       });
 
-      if (!valid) {
-        formMessage.style.display = 'block';
-        formMessage.style.cssText = 'display:block; padding:0.75rem 1rem; margin-top:1rem; background:#fff0f0; border:1px solid #8c1822; font-family:var(--sans); font-size:0.75rem; color:#8c1822;';
-        formMessage.textContent = 'Compila tutti i campi obbligatori contrassegnati con *.';
-        return;
+      // Email format validation
+      const emailField = form.querySelector('input[type="email"]');
+      if (emailField && emailField.value.trim() && !EMAIL_RE.test(emailField.value.trim())) {
+        emailField.style.borderColor = '#8c1822';
+        valid = false;
       }
 
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Invio in corso...';
+      if (!valid && msgEl) {
+        msgEl.style.cssText = [
+          'display:block',
+          'padding:0.75rem 1rem',
+          'margin-top:1rem',
+          'background:#fff0f0',
+          'border:1px solid #8c1822',
+          'font-family:var(--sans)',
+          'font-size:0.75rem',
+          'color:#8c1822'
+        ].join(';');
+        const hasInvalidEmail = emailField && emailField.value.trim() && !EMAIL_RE.test(emailField.value.trim());
+        msgEl.textContent = hasInvalidEmail
+          ? 'Inserisci un indirizzo email valido.'
+          : 'Compila tutti i campi obbligatori contrassegnati con *.';
+      }
 
-      // Redirect to thank you page
-      // In production: replace with actual form submission (AJAX/fetch to backend)
-      setTimeout(() => {
-        window.location.href = 'grazie.html';
-      }, 600);
+      return valid;
+    }
+
+    document.querySelectorAll('.dama-form').forEach(form => {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!validateForm(form)) return;
+
+        const submitBtn = form.querySelector('.form__submit');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Invio in corso...';
+
+        // In production: replace with actual form submission (AJAX/fetch to backend)
+        setTimeout(() => {
+          window.location.href = 'grazie.html';
+        }, 600);
+      });
     });
   </script>
 </body>
