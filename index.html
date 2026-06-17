@@ -640,6 +640,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 0;
+      list-style: none;
     }
 
     .numeri__item {
@@ -824,73 +825,108 @@
     }
 
     /* =========================================
-       Social Proof
+       Social Proof — Manifesto editoriale
     ========================================= */
     .social-proof {
       padding: 6rem 0;
       background: var(--cream);
     }
 
-    .social-proof__note {
-      font-family: var(--sans);
-      font-size: 0.75rem;
-      color: var(--light-text);
-      font-style: italic;
-      margin-top: 3rem;
+    /* Manifesto strip */
+    .manifesto {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
       text-align: center;
     }
 
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      background: var(--border);
-      margin-top: 3.5rem;
+    .manifesto__inner {
+      max-width: 760px;
+      margin: 0 auto;
     }
 
-    .testimonial {
-      background: var(--cream);
-      padding: 2.75rem 2.5rem;
+    .manifesto__label {
+      display: block;
+      margin-bottom: 2rem;
+      color: var(--burgundy);
     }
 
-    .testimonial__stars {
-      display: flex;
-      gap: 3px;
-      margin-bottom: 1.25rem;
-    }
-    .testimonial__star {
-      width: 10px;
-      height: 10px;
-      background: var(--burgundy);
-      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    }
-
-    .testimonial__text {
+    .manifesto__quote {
       font-family: var(--serif);
-      font-size: 1.0625rem;
       font-weight: 300;
-      font-style: italic;
-      line-height: 1.7;
+      font-size: clamp(1.375rem, 2.5vw, 2rem);
+      line-height: 1.55;
       color: var(--black);
       margin-bottom: 1.5rem;
+      font-style: normal;
     }
 
-    .testimonial__author {
+    .manifesto__quote em {
+      font-style: italic;
+      color: var(--burgundy);
+    }
+
+    .manifesto__author {
+      display: block;
       font-family: var(--sans);
       font-size: 0.6875rem;
       font-weight: 500;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--mid-gray);
+      color: var(--light-text);
+      font-style: normal;
     }
 
-    .testimonial__author span {
-      color: var(--light-text);
+    /* Brand values */
+    .brand-values {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand-value {
+      padding: 0 1.5rem;
+    }
+
+    .brand-value__word {
+      font-family: var(--serif);
+      font-size: clamp(1.125rem, 2vw, 1.5rem);
       font-weight: 300;
-      text-transform: none;
-      letter-spacing: 0;
-      display: block;
-      margin-top: 0.2rem;
+      color: var(--black);
+      letter-spacing: 0.06em;
+    }
+
+    .brand-value--accent .brand-value__sep {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--burgundy);
+    }
+
+    /* Testimonial placeholder */
+    .testimonials-placeholder {
+      padding: 3rem 0 1rem;
+      text-align: center;
+    }
+
+    .testimonials-placeholder__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonials-placeholder__text {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--light-text);
+      max-width: 400px;
+      line-height: 1.65;
     }
 
     /* =========================================
@@ -1147,6 +1183,14 @@
     .form__submit:disabled {
       opacity: 0.6;
       cursor: not-allowed;
+    }
+
+    .form__label-opt {
+      font-weight: 300;
+      letter-spacing: 0;
+      text-transform: none;
+      opacity: 0.55;
+      font-size: 0.625rem;
     }
 
     /* =========================================
@@ -1516,8 +1560,9 @@
           del <em>banqueting di lusso</em>
         </h1>
         <p class="hero__subtitle">
-          Ogni evento firmato Dama24 è un rituale di accoglienza.<br/>
-          Cucina sartoriale, mise en place d'autore, servizio impeccabile.
+          Catering aziendale a Milano per eventi aziendali, convention,
+          fiere e inaugurazioni. Un racconto sensoriale costruito attraverso
+          l'attenzione al dettaglio nella cucina, mise en place e servizio.
         </p>
         <a href="#servizi" class="hero__discover" aria-label="Scopri i nostri servizi di catering">
           Scopri i servizi ↓
@@ -1562,7 +1607,7 @@
               </div>
 
               <div class="form__field form__field--full">
-                <label class="form__label" for="h-tipo-evento">Tipo evento <span style="opacity:.6;font-weight:300;letter-spacing:0;">(facoltativo)</span></label>
+                <label class="form__label" for="h-tipo-evento">Tipo evento <span class="form__label-opt">(facoltativo)</span></label>
                 <div class="form__select-wrap">
                   <select class="form__select" id="h-tipo-evento" name="tipo_evento">
                     <option value="">Seleziona il tipo di evento</option>
@@ -1578,7 +1623,7 @@
               </div>
 
               <div class="form__field form__field--full">
-                <label class="form__label" for="h-messaggio">Messaggio <span style="opacity:.6;font-weight:300;letter-spacing:0;">(facoltativo)</span></label>
+                <label class="form__label" for="h-messaggio">Messaggio <span class="form__label-opt">(facoltativo)</span></label>
                 <textarea class="form__textarea" id="h-messaggio" name="messaggio"
                           rows="3"
                           placeholder="Data, numero ospiti, note..."></textarea>
@@ -1653,30 +1698,25 @@
         <h2 class="section__title" id="numeri-title">L'eccellenza che si misura</h2>
       </div>
 
-      <!-- NOTE: I seguenti numeri sono placeholder — aggiornare con dati verificati -->
-      <div class="numeri__grid reveal-stagger" role="list">
-        <div class="numeri__item" role="listitem">
-          <p class="numeri__number">—</p>
+      <!-- PLACEHOLDER: sostituire con dati verificati dall'azienda -->
+      <ul class="numeri__grid reveal-stagger">
+        <li class="numeri__item">
+          <p class="numeri__number" aria-label="Dato non ancora disponibile">·</p>
           <p class="numeri__note">Anni di esperienza</p>
-        </div>
-        <div class="numeri__item" role="listitem">
-          <p class="numeri__number">—</p>
+        </li>
+        <li class="numeri__item">
+          <p class="numeri__number" aria-label="Dato non ancora disponibile">·</p>
           <p class="numeri__note">Clienti aziendali</p>
-        </div>
-        <div class="numeri__item" role="listitem">
-          <p class="numeri__number">—</p>
+        </li>
+        <li class="numeri__item">
+          <p class="numeri__number" aria-label="Dato non ancora disponibile">·</p>
           <p class="numeri__note">Eventi realizzati</p>
-        </div>
-        <div class="numeri__item" role="listitem">
-          <p class="numeri__number">—</p>
+        </li>
+        <li class="numeri__item">
+          <p class="numeri__number" aria-label="Dato non ancora disponibile">·</p>
           <p class="numeri__note">Persone servite ogni anno</p>
-        </div>
-      </div>
-
-      <p style="text-align:center; margin-top:1.5rem; font-family:var(--sans); font-size:0.6875rem; color:var(--light-text); font-style:italic;">
-        <!-- PLACEHOLDER: inserire dati verificati -->
-        I dati saranno aggiornati con le informazioni ufficiali.
-      </p>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -1689,9 +1729,10 @@
           Catering aziendale Milano.<br/>
           Ogni forma, ogni formato.
         </h2>
-        <p class="section__lead" style="max-width:560px;">
-          Dall'evento corporate alla convention, dal coffee break alla cena di gala:
-          Dama24 disegna ogni esperienza su misura del tuo evento.
+        <p class="section__lead" style="max-width:600px;">
+          Dal catering per convention e fiere al coffee break aziendale, dall'inaugurazione
+          alla cena di gala: ogni esperienza è progettata con la stessa cura sartoriale,
+          indipendentemente dalla scala.
         </p>
       </div>
 
@@ -1720,22 +1761,22 @@
 
         <article class="servizi__card">
           <p class="servizi__card-number">03</p>
-          <h3 class="servizi__card-title">Convention &amp; Fiere</h3>
+          <h3 class="servizi__card-title">Catering per Convention e Fiere</h3>
           <p class="servizi__card-body">
-            Catering per convention, fiere e grandi eventi aziendali a Milano e in tutta Italia.
-            Strutture modulari, servizio professionale e coordinamento completo per ospitare
-            da decine a migliaia di persone con la stessa cura artigianale.
+            Catering per convention, fiere ed esposizioni a Milano e in tutta Italia.
+            Coordinamento integrale per ambienti complessi, dalla logistica al servizio di sala,
+            con la stessa attenzione al dettaglio di ogni progetto Dama24.
           </p>
           <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Convention e Fiere">Richiedi preventivo</a>
         </article>
 
         <article class="servizi__card">
           <p class="servizi__card-number">04</p>
-          <h3 class="servizi__card-title">Inaugurazioni &amp; Opening</h3>
+          <h3 class="servizi__card-title">Catering per Inaugurazioni</h3>
           <p class="servizi__card-body">
-            Catering per inaugurazioni, opening e lanci di prodotto. Un servizio pensato
-            per fare della prima impressione un'esperienza memorabile, dove il gusto
-            incontra l'estetica del brand.
+            Catering per inaugurazioni, opening e lanci di prodotto. La prima impressione
+            diventa un'esperienza sensoriale: il gusto incontra l'estetica del brand,
+            in ogni dettaglio orchestrato con precisione.
           </p>
           <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Inaugurazioni">Richiedi preventivo</a>
         </article>
@@ -1827,74 +1868,56 @@
   <!-- ==================== SOCIAL PROOF ==================== -->
   <section class="social-proof" aria-labelledby="proof-title">
     <div class="container">
-      <div class="section__header--center reveal">
-        <span class="label section__eyebrow">Cosa dicono di noi</span>
-        <h2 class="section__title" id="proof-title">
-          La voce dei nostri clienti
-        </h2>
-        <p class="section__lead">
-          La nostra reputazione si costruisce evento dopo evento,
-          attraverso la soddisfazione di chi ci ha scelto.
-        </p>
-      </div>
 
-      <!-- PLACEHOLDER: Inserire testimonianze reali verificate -->
-      <div class="testimonials reveal-stagger">
-        <div class="testimonial">
-          <div class="testimonial__stars" aria-label="5 stelle su 5" role="img">
-            <span class="testimonial__star" aria-hidden="true"></span>
-            <span class="testimonial__star" aria-hidden="true"></span>
-            <span class="testimonial__star" aria-hidden="true"></span>
-            <span class="testimonial__star" aria-hidden="true"></span>
-            <span class="testimonial__star" aria-hidden="true"></span>
-          </div>
-          <p class="testimonial__text">
-            [Testimoniale — da inserire con fonte verificata]
-          </p>
-          <p class="testimonial__author">
-            [Nome Cliente]
-            <span>[Azienda — Ruolo]</span>
-          </p>
-        </div>
-
-        <div class="testimonial">
-          <div class="testimonial__stars" aria-label="5 stelle su 5" role="img">
-            <span class="testimonial__star" aria-hidden="true"></span>
-            <span class="testimonial__star" aria-hidden="true"></span>
-            <span class="testimonial__star" aria-hidden="true"></span>
-            <span class="testimonial__star" aria-hidden="true"></span>
-            <span class="testimonial__star" aria-hidden="true"></span>
-          </div>
-          <p class="testimonial__text">
-            [Testimoniale — da inserire con fonte verificata]
-          </p>
-          <p class="testimonial__author">
-            [Nome Cliente]
-            <span>[Azienda — Ruolo]</span>
-          </p>
-        </div>
-
-        <div class="testimonial">
-          <div class="testimonial__stars" aria-label="5 stelle su 5" role="img">
-            <span class="testimonial__star" aria-hidden="true"></span>
-            <span class="testimonial__star" aria-hidden="true"></span>
-            <span class="testimonial__star" aria-hidden="true"></span>
-            <span class="testimonial__star" aria-hidden="true"></span>
-            <span class="testimonial__star" aria-hidden="true"></span>
-          </div>
-          <p class="testimonial__text">
-            [Testimoniale — da inserire con fonte verificata]
-          </p>
-          <p class="testimonial__author">
-            [Nome Cliente]
-            <span>[Azienda — Ruolo]</span>
-          </p>
+      <!-- Striscia manifesto editoriale -->
+      <div class="manifesto reveal">
+        <div class="manifesto__inner">
+          <span class="label manifesto__label">Il nostro stile</span>
+          <blockquote class="manifesto__quote" id="proof-title">
+            "Il nostro stile, l'essenza dell'accoglienza.<br/>
+            Ogni evento è un'opera composta.<br/>
+            <em>Nulla è replicato: tutto è costruito con intenzione.</em>"
+          </blockquote>
+          <cite class="manifesto__author">— Dama24 Banqueting</cite>
         </div>
       </div>
 
-      <p class="social-proof__note" role="note">
-        Placeholder — le testimonianze saranno sostituite con recensioni reali e verificate fornite dall'azienda.
-      </p>
+      <!-- Valori brand -->
+      <div class="brand-values reveal-stagger" aria-label="I valori Dama24">
+        <div class="brand-value">
+          <span class="brand-value__word">Artigianalità</span>
+        </div>
+        <div class="brand-value brand-value--accent">
+          <span class="brand-value__sep" aria-hidden="true">·</span>
+        </div>
+        <div class="brand-value">
+          <span class="brand-value__word">Sartorialità</span>
+        </div>
+        <div class="brand-value brand-value--accent">
+          <span class="brand-value__sep" aria-hidden="true">·</span>
+        </div>
+        <div class="brand-value">
+          <span class="brand-value__word">Eccellenza</span>
+        </div>
+        <div class="brand-value brand-value--accent">
+          <span class="brand-value__sep" aria-hidden="true">·</span>
+        </div>
+        <div class="brand-value">
+          <span class="brand-value__word">Ospitalità</span>
+        </div>
+      </div>
+
+      <!-- Placeholder testimonianze — da aggiornare con fonte verificata -->
+      <div class="testimonials-placeholder reveal" role="note" aria-label="Sezione testimonianze in arrivo">
+        <div class="testimonials-placeholder__inner">
+          <span class="label" style="color:var(--burgundy);">Testimonianze</span>
+          <p class="testimonials-placeholder__text">
+            Le recensioni dei nostri clienti aziendali saranno presto disponibili in questa sezione.
+          </p>
+          <a href="#preventivo" class="btn btn--outline">Richiedi informazioni</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1947,8 +1970,9 @@
             Costruiamo insieme<br/>il tuo prossimo evento
           </h2>
           <p class="conversion__lead">
-            Scrivici e iniziamo a costruire il tuo progetto. Risponderemo entro 24 ore
-            con una proposta personalizzata per il tuo evento aziendale.
+            Un progetto di catering aziendale a Milano nasce da un ascolto attento.
+            Raccontaci il tuo evento: risponderemo entro 24 ore con una proposta
+            costruita attorno alla tua visione.
           </p>
 
           <ul class="conversion__details" aria-label="Contatti Dama24">
@@ -2010,7 +2034,7 @@
               </div>
 
               <div class="form__field form__field--full">
-                <label class="form__label" for="tipo-evento">Tipo evento <span style="opacity:.55;font-weight:300;letter-spacing:0;">(facoltativo)</span></label>
+                <label class="form__label" for="tipo-evento">Tipo evento <span class="form__label-opt">(facoltativo)</span></label>
                 <div class="form__select-wrap">
                   <select class="form__select" id="tipo-evento" name="tipo_evento">
                     <option value="">Seleziona il tipo di evento</option>
@@ -2026,7 +2050,7 @@
               </div>
 
               <div class="form__field form__field--full">
-                <label class="form__label" for="messaggio">Messaggio <span style="opacity:.55;font-weight:300;letter-spacing:0;">(facoltativo)</span></label>
+                <label class="form__label" for="messaggio">Messaggio <span class="form__label-opt">(facoltativo)</span></label>
                 <textarea class="form__textarea" id="messaggio" name="messaggio"
                           rows="4"
                           placeholder="Raccontaci la data, il numero di ospiti, il tipo di evento e tutto ciò che ritieni utile."></textarea>
@@ -2070,7 +2094,8 @@
         <span class="label section__eyebrow">FAQ</span>
         <h2 class="section__title" id="faq-title">Domande frequenti</h2>
         <p class="section__lead">
-          Tutto quello che vuoi sapere sul catering aziendale Dama24 prima di contattarci.
+          Tutto quello che vuoi sapere sul banqueting aziendale Dama24 a Milano
+          prima di iniziare il tuo progetto.
         </p>
       </div>
 
@@ -2080,15 +2105,16 @@
                   aria-expanded="false"
                   aria-controls="faq-1-answer"
                   id="faq-1">
-            Quali tipologie di eventi aziendali gestite?
+            Quali tipologie di eventi aziendali gestite a Milano?
             <span class="faq__icon" aria-hidden="true"></span>
           </button>
           <div class="faq__answer" id="faq-1-answer" role="region" aria-labelledby="faq-1">
             <p class="faq__answer-inner">
-              Dama24 gestisce ogni tipologia di evento aziendale: coffee break e lunch per meeting,
-              cene di gala, convention e conferenze, fiere e stand expo, inaugurazioni e opening,
-              lanci di prodotto, team building con esperienze gastronomiche e molto altro.
-              Ogni progetto viene sviluppato su misura, indipendentemente dalla scala.
+              Il banqueting aziendale Dama24 abbraccia ogni formato: coffee break aziendali
+              e lunch per meeting, cene di gala, catering per convention e conferenze,
+              catering per fiere ed esposizioni, catering per inaugurazioni e opening, lanci di
+              prodotto. Ogni progetto viene costruito su misura attorno alla tua visione,
+              indipendentemente dalla scala.
             </p>
           </div>
         </div>
@@ -2103,9 +2129,10 @@
           </button>
           <div class="faq__answer" id="faq-2-answer" role="region" aria-labelledby="faq-2">
             <p class="faq__answer-inner">
-              La nostra base operativa è a Milano e in Brianza, ma operiamo su tutto il territorio
-              nazionale per eventi che richiedono la nostra presenza. Contattaci per discutere
-              la logistica del tuo evento.
+              La nostra base operativa è a Milano — con sede anche a Caponago, in Brianza —
+              e operiamo su tutto il territorio nazionale per progetti che richiedono la nostra
+              presenza. Per il catering aziendale a Milano siamo operativi in ogni venue,
+              dal centro alle aree fieristiche e congressuali.
             </p>
           </div>
         </div>
