@@ -643,6 +643,14 @@
       list-style: none;
     }
 
+    .numeri__number--placeholder {
+      font-size: 1rem;
+      color: var(--light-text);
+      font-family: var(--sans);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
     .numeri__item {
       padding: 3.5rem 2.5rem;
       border-right: 1px solid var(--border);
@@ -681,7 +689,7 @@
     ========================================= */
     .servizi__grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 0;
       border: 1px solid var(--border);
     }
@@ -689,13 +697,11 @@
     .servizi__card {
       padding: 3rem 2.5rem;
       border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
       position: relative;
       overflow: hidden;
       transition: background 0.3s var(--ease-out);
     }
-    .servizi__card:nth-child(3n) { border-right: none; }
-    .servizi__card:nth-last-child(-n+3) { border-bottom: none; }
+    .servizi__card:last-child { border-right: none; }
     .servizi__card:hover { background: var(--cream); }
 
     .servizi__card-number {
@@ -733,6 +739,30 @@
       color: var(--burgundy);
       border-bottom: 1px solid var(--burgundy);
       padding-bottom: 1px;
+    }
+
+    .servizi__categorie {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0;
+      align-items: center;
+      margin-top: 1.25rem;
+    }
+
+    .servizi__cat {
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      padding: 0 0.75rem;
+    }
+    .servizi__cat:first-child { padding-left: 0; }
+
+    .servizi__cat-sep {
+      color: var(--burgundy);
+      font-size: 0.875rem;
     }
 
     /* =========================================
@@ -1193,6 +1223,51 @@
       font-size: 0.625rem;
     }
 
+    /* Steps */
+    .steps {
+      list-style: none;
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: flex-start;
+    }
+    .step:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+
+    .step__num {
+      font-family: var(--serif);
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--burgundy);
+      letter-spacing: 0.08em;
+      flex-shrink: 0;
+      padding-top: 0.2rem;
+      width: 28px;
+    }
+
+    .step__title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+
+    .step__desc {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+    }
+
     /* =========================================
        FAQ
     ========================================= */
@@ -1368,6 +1443,33 @@
     }
     .footer__address a:hover { color: var(--white); }
 
+    .footer__trust-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 0;
+      align-items: center;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer__trust-item {
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      padding: 0 1rem;
+    }
+    .footer__trust-item:first-child { padding-left: 0; }
+
+    .footer__trust-sep {
+      color: var(--burgundy);
+      font-size: 0.875rem;
+    }
+
     .footer__bottom {
       padding-top: 2rem;
       display: flex;
@@ -1457,10 +1559,9 @@
       .numeri__item:nth-child(2) { border-bottom: 1px solid var(--border); }
 
       .servizi__grid { grid-template-columns: repeat(2, 1fr); }
-      .servizi__card:nth-child(3n) { border-right: 1px solid var(--border); }
       .servizi__card:nth-child(2n) { border-right: none; }
-      .servizi__card:nth-last-child(-n+2) { border-bottom: none; }
-      .servizi__card:nth-last-child(-n+3) { border-bottom: 1px solid var(--border); }
+      .servizi__card:nth-child(1),
+      .servizi__card:nth-child(2) { border-bottom: 1px solid var(--border); }
 
       .why { grid-template-columns: 1fr; }
       .why__content { padding: 4rem 3rem; }
@@ -1487,8 +1588,8 @@
 
       .servizi__grid { grid-template-columns: 1fr; }
       .servizi__card { border-right: none !important; }
-      .servizi__card:nth-last-child(-n+1) { border-bottom: none; }
       .servizi__card:not(:last-child) { border-bottom: 1px solid var(--border); }
+      .servizi__card:last-child { border-bottom: none; }
 
       .gallery__grid {
         grid-template-columns: 1fr;
@@ -1556,13 +1657,11 @@
       <div class="hero__text">
         <span class="hero__label">Catering Aziendale · Milano</span>
         <h1 class="hero__title">
-          L'artigiano visionario<br/>
-          del <em>banqueting di lusso</em>
+          Catering aziendale<br/>a Milano <em>per eventi</em>
         </h1>
         <p class="hero__subtitle">
-          Catering aziendale a Milano per eventi aziendali, convention,
-          fiere e inaugurazioni. Un racconto sensoriale costruito attraverso
-          l'attenzione al dettaglio nella cucina, mise en place e servizio.
+          Coffee break, convention, inaugurazioni, meeting aziendali e banqueting su misura.<br/>
+          Ricevi una proposta personalizzata entro 24 ore.
         </p>
         <a href="#servizi" class="hero__discover" aria-label="Scopri i nostri servizi di catering">
           Scopri i servizi ↓
@@ -1645,14 +1744,14 @@
             <div class="form__error" id="hero-form-message" role="alert" aria-live="polite" style="display:none;"></div>
 
             <button type="submit" class="form__submit btn">
-              Ricevi una proposta personalizzata
+              Richiedi il tuo preventivo
             </button>
 
             <div class="form__trust" aria-label="Perché sceglierci">
               <span class="trust-item">Preventivo gratuito</span>
               <span class="trust-item">Risposta entro 24 ore</span>
-              <span class="trust-item">Progetto su misura</span>
-              <span class="trust-item">Servizio completo</span>
+              <span class="trust-item">Nessun impegno</span>
+              <span class="trust-item">Consulenza dedicata</span>
             </div>
           </form>
         </div>
@@ -1701,20 +1800,20 @@
       <!-- PLACEHOLDER: sostituire con dati verificati dall'azienda -->
       <ul class="numeri__grid reveal-stagger">
         <li class="numeri__item">
-          <p class="numeri__number" aria-label="Dato non ancora disponibile">·</p>
-          <p class="numeri__note">Anni di esperienza</p>
-        </li>
-        <li class="numeri__item">
-          <p class="numeri__number" aria-label="Dato non ancora disponibile">·</p>
-          <p class="numeri__note">Clienti aziendali</p>
-        </li>
-        <li class="numeri__item">
-          <p class="numeri__number" aria-label="Dato non ancora disponibile">·</p>
+          <p class="numeri__number numeri__number--placeholder">[NUM]</p>
           <p class="numeri__note">Eventi realizzati</p>
         </li>
         <li class="numeri__item">
-          <p class="numeri__number" aria-label="Dato non ancora disponibile">·</p>
-          <p class="numeri__note">Persone servite ogni anno</p>
+          <p class="numeri__number numeri__number--placeholder">[NUM]</p>
+          <p class="numeri__note">Aziende supportate</p>
+        </li>
+        <li class="numeri__item">
+          <p class="numeri__number numeri__number--placeholder">[NUM]</p>
+          <p class="numeri__note">Clienti soddisfatti</p>
+        </li>
+        <li class="numeri__item">
+          <p class="numeri__number">24h</p>
+          <p class="numeri__note">Risposta garantita</p>
         </li>
       </ul>
     </div>
@@ -1726,82 +1825,63 @@
       <div class="section__header reveal">
         <span class="label section__eyebrow">I nostri servizi</span>
         <h2 class="section__title" id="servizi-title">
-          Catering aziendale Milano.<br/>
-          Ogni forma, ogni formato.
+          Servizi di catering aziendale<br/>per ogni tipo di evento
         </h2>
-        <p class="section__lead" style="max-width:600px;">
-          Dal catering per convention e fiere al coffee break aziendale, dall'inaugurazione
-          alla cena di gala: ogni esperienza è progettata con la stessa cura sartoriale,
-          indipendentemente dalla scala.
-        </p>
+        <nav class="servizi__categorie" aria-label="Categorie servizi">
+          <span class="servizi__cat">Convention e Congressi</span>
+          <span class="servizi__cat-sep" aria-hidden="true">·</span>
+          <span class="servizi__cat">Fiere</span>
+          <span class="servizi__cat-sep" aria-hidden="true">·</span>
+          <span class="servizi__cat">Inaugurazioni Aziendali</span>
+          <span class="servizi__cat-sep" aria-hidden="true">·</span>
+          <span class="servizi__cat">Meeting Aziendali</span>
+          <span class="servizi__cat-sep" aria-hidden="true">·</span>
+          <span class="servizi__cat">Coffee Break Aziendali</span>
+        </nav>
       </div>
 
       <div class="servizi__grid reveal-stagger">
         <article class="servizi__card">
           <p class="servizi__card-number">01</p>
-          <h3 class="servizi__card-title">Banqueting Aziendale</h3>
+          <h3 class="servizi__card-title">Catering Aziendale</h3>
           <p class="servizi__card-body">
-            Il cuore gastronomico dell'evento. Menù su misura, dal placée al buffet,
-            con una cucina consapevole che risponde a ogni esigenza senza rinunciare all'eccellenza.
-            La mise en place diventa scenografia con materiali ricercati e direzione artistica curata nei dettagli.
+            Coffee break, lunch aziendali, inaugurazioni ed eventi corporate.
           </p>
-          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Banqueting Aziendale">Richiedi preventivo</a>
+          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Catering Aziendale">Richiedi preventivo</a>
         </article>
 
         <article class="servizi__card">
           <p class="servizi__card-number">02</p>
-          <h3 class="servizi__card-title">Coffee Break &amp; Lunch Aziendali</h3>
+          <h3 class="servizi__card-title">Banqueting</h3>
           <p class="servizi__card-body">
-            Anche il business trova la sua forma: coffee break eleganti, lunch funzionali
-            o lunchbox gourmet personalizzati, sempre sotto una regia di sala che trasforma
-            il servizio in un racconto di stile e accoglienza.
+            Buffet, servizio placée, servizio a passaggio e formule completamente personalizzate.
           </p>
-          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Coffee Break">Richiedi preventivo</a>
+          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Banqueting">Richiedi preventivo</a>
         </article>
 
         <article class="servizi__card">
           <p class="servizi__card-number">03</p>
-          <h3 class="servizi__card-title">Catering per Convention e Fiere</h3>
+          <h3 class="servizi__card-title">Bar Catering</h3>
           <p class="servizi__card-body">
-            Catering per convention, fiere ed esposizioni a Milano e in tutta Italia.
-            Coordinamento integrale per ambienti complessi, dalla logistica al servizio di sala,
-            con la stessa attenzione al dettaglio di ogni progetto Dama24.
+            Open bar, cocktail personalizzati e bartender professionisti.
           </p>
-          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Convention e Fiere">Richiedi preventivo</a>
+          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Bar Catering">Richiedi preventivo</a>
         </article>
 
         <article class="servizi__card">
           <p class="servizi__card-number">04</p>
-          <h3 class="servizi__card-title">Catering per Inaugurazioni</h3>
+          <h3 class="servizi__card-title">Allestimenti &amp; Intrattenimento</h3>
           <p class="servizi__card-body">
-            Catering per inaugurazioni, opening e lanci di prodotto. La prima impressione
-            diventa un'esperienza sensoriale: il gusto incontra l'estetica del brand,
-            in ogni dettaglio orchestrato con precisione.
+            Arredi, decorazioni, musica live, DJ set, foto e video per eventi aziendali.
           </p>
-          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Inaugurazioni">Richiedi preventivo</a>
+          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Allestimenti">Richiedi preventivo</a>
         </article>
+      </div>
 
-        <article class="servizi__card">
-          <p class="servizi__card-number">05</p>
-          <h3 class="servizi__card-title">Mixology d'Autore</h3>
-          <p class="servizi__card-body">
-            L'arte del bere come espressione estetica e sensoriale. L'Essential Cocktail Collection
-            reinterpreta i grandi classici con materie prime selezionate. Cocktail tailor-made
-            firmati da mixologist di livello internazionale, armonizzati con il tema dell'evento.
-          </p>
-          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Mixology">Richiedi preventivo</a>
-        </article>
-
-        <article class="servizi__card">
-          <p class="servizi__card-number">06</p>
-          <h3 class="servizi__card-title">Event Styling</h3>
-          <p class="servizi__card-body">
-            Dare forma e atmosfera all'evento. Dal design degli arredi al noleggio attrezzature,
-            dalle architetture temporanee alle scenografie di luce. Atmosfere sartoriali
-            create con musica live, creazioni floreali e fotografia d'autore.
-          </p>
-          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Event Styling">Richiedi preventivo</a>
-        </article>
+      <div class="servizi__cta reveal" style="text-align:center; margin-top:3rem;">
+        <a href="#preventivo" class="btn btn--outline" aria-label="Parla con un consulente Dama24">
+          Parla con un nostro consulente
+        </a>
       </div>
     </div>
   </section>
@@ -1817,51 +1897,53 @@
     <div class="why__content">
       <span class="label section__eyebrow" style="color:rgba(255,255,255,0.35);">Perché Dama24</span>
       <h2 class="section__title" id="why-title">
-        Il lusso discreto<br/>dell'eccellenza sartoriale
+        Perché le aziende<br/>scelgono Dama24
       </h2>
 
       <ul class="why__list reveal-stagger" aria-label="Punti di forza Dama24">
         <li class="why__item">
           <span class="why__item-marker" aria-hidden="true"></span>
           <div>
-            <h3 class="why__item-title">Cucina artigianale su misura</h3>
+            <h3 class="why__item-title">Su misura</h3>
             <p class="why__item-desc">
-              Ogni menù è composto attorno alle specificità dell'evento, del brand e degli ospiti.
-              Nulla è standardizzato, tutto è costruito con intenzione.
+              Ogni evento viene progettato sulle reali esigenze dell'azienda.
             </p>
           </div>
         </li>
         <li class="why__item">
           <span class="why__item-marker" aria-hidden="true"></span>
           <div>
-            <h3 class="why__item-title">Mise en place come scenografia</h3>
+            <h3 class="why__item-title">Presenza costante</h3>
             <p class="why__item-desc">
-              Materiali ricercati, direzione artistica curata nei dettagli.
-              La tavola diventa estensione visiva del tuo evento.
+              Un referente dedicato prima, durante e dopo l'evento.
             </p>
           </div>
         </li>
         <li class="why__item">
           <span class="why__item-marker" aria-hidden="true"></span>
           <div>
-            <h3 class="why__item-title">Regia di sala impeccabile</h3>
+            <h3 class="why__item-title">Team selezionato</h3>
             <p class="why__item-desc">
-              Personale selezionato e formato secondo gli standard Dama24.
-              Professionalità, stile e discrezione in ogni contesto.
+              Professionisti qualificati per eventi aziendali e corporate.
             </p>
           </div>
         </li>
         <li class="why__item">
           <span class="why__item-marker" aria-hidden="true"></span>
           <div>
-            <h3 class="why__item-title">Progettazione integrata</h3>
+            <h3 class="why__item-title">Un solo partner</h3>
             <p class="why__item-desc">
-              Un unico interlocutore per catering, mixology, styling e servizio.
-              Un ecosistema coordinato che libera l'azienda da ogni complessità organizzativa.
+              Food, beverage, allestimenti e coordinamento gestiti da un unico interlocutore.
             </p>
           </div>
         </li>
       </ul>
+
+      <div style="margin-top:2.5rem;">
+        <a href="#preventivo" class="btn btn--outline-white" aria-label="Richiedi una consulenza gratuita">
+          Richiedi una consulenza gratuita
+        </a>
+      </div>
     </div>
   </section>
 
@@ -1910,11 +1992,16 @@
       <!-- Placeholder testimonianze — da aggiornare con fonte verificata -->
       <div class="testimonials-placeholder reveal" role="note" aria-label="Sezione testimonianze in arrivo">
         <div class="testimonials-placeholder__inner">
-          <span class="label" style="color:var(--burgundy);">Testimonianze</span>
+          <h3 class="section__title" style="font-size:1.5rem; margin-bottom:0.5rem;">Le aziende che ci hanno scelto</h3>
+          <!-- PLACEHOLDER: inserire loghi aziende clienti solo se presenti nelle fonti autorizzate -->
           <p class="testimonials-placeholder__text">
-            Le recensioni dei nostri clienti aziendali saranno presto disponibili in questa sezione.
+            I loghi delle aziende clienti saranno inseriti non appena disponibili nelle fonti verificate.
           </p>
-          <a href="#preventivo" class="btn btn--outline">Richiedi informazioni</a>
+          <h3 class="section__title" style="font-size:1.5rem; margin:1.5rem 0 0.5rem;">Gli eventi organizzati da Dama24</h3>
+          <p class="testimonials-placeholder__text" style="margin-bottom:1.5rem;">
+            Scopri la nostra gallery di eventi aziendali, convention, fiere e inaugurazioni.
+          </p>
+          <a href="#gallery" class="btn btn--outline" aria-label="Vai alla gallery eventi">Guarda la gallery</a>
         </div>
       </div>
 
@@ -1965,40 +2052,48 @@
     <div class="container">
       <div class="conversion__inner">
         <div class="conversion__info">
-          <span class="label section__eyebrow" style="color:rgba(255,255,255,0.35);">Richiesta preventivo</span>
-          <h2 class="section__title conversion__info-title" id="form-title">
-            Costruiamo insieme<br/>il tuo prossimo evento
+          <span class="label section__eyebrow" style="color:rgba(255,255,255,0.35);">Come funziona</span>
+          <h2 class="section__title" id="form-title">
+            Organizza il tuo prossimo evento aziendale<br/>con un partner specializzato
           </h2>
-          <p class="conversion__lead">
-            Un progetto di catering aziendale a Milano nasce da un ascolto attento.
-            Raccontaci il tuo evento: risponderemo entro 24 ore con una proposta
-            costruita attorno alla tua visione.
-          </p>
 
-          <ul class="conversion__details" aria-label="Contatti Dama24">
-            <li class="conversion__detail">
-              <span class="conversion__detail-label">Email</span>
-              <span class="conversion__detail-value">
-                <a href="mailto:info@dama24banqueting.it">info@dama24banqueting.it</a>
-              </span>
+          <ol class="steps" aria-label="Come funziona il servizio Dama24">
+            <li class="step">
+              <span class="step__num" aria-hidden="true">01</span>
+              <div class="step__content">
+                <h3 class="step__title">Raccontaci il tuo evento</h3>
+                <p class="step__desc">Compila il form con le informazioni essenziali sul tuo progetto.</p>
+              </div>
             </li>
-            <li class="conversion__detail">
-              <span class="conversion__detail-label">Sede op.</span>
-              <span class="conversion__detail-value">
-                Via della Chimica, 20/B — 20867 Caponago (MB)
-              </span>
+            <li class="step">
+              <span class="step__num" aria-hidden="true">02</span>
+              <div class="step__content">
+                <h3 class="step__title">Ricevi una proposta personalizzata</h3>
+                <p class="step__desc">Entro 24 ore ti invieremo una proposta costruita sulle tue esigenze.</p>
+              </div>
             </li>
-            <li class="conversion__detail">
-              <span class="conversion__detail-label">Sede leg.</span>
-              <span class="conversion__detail-value">
-                Via Leone XIII, 14 — 20145 Milano
-              </span>
+            <li class="step">
+              <span class="step__num" aria-hidden="true">03</span>
+              <div class="step__content">
+                <h3 class="step__title">Definiamo menù, servizio e allestimenti</h3>
+                <p class="step__desc">Lavoriamo insieme per perfezionare ogni dettaglio del tuo evento.</p>
+              </div>
             </li>
-            <li class="conversion__detail">
-              <span class="conversion__detail-label">P.IVA</span>
-              <span class="conversion__detail-value">13885090962</span>
+            <li class="step">
+              <span class="step__num" aria-hidden="true">04</span>
+              <div class="step__content">
+                <h3 class="step__title">Realizziamo il tuo evento</h3>
+                <p class="step__desc">Il giorno dell'evento, il nostro team è presente dalla preparazione all'ultimo saluto.</p>
+              </div>
             </li>
-          </ul>
+          </ol>
+
+          <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.08);">
+            <p style="font-family:var(--serif); font-size:0.9rem; font-weight:300; color:rgba(255,255,255,0.45); margin-bottom:0.5rem;">Contatti</p>
+            <p style="font-family:var(--serif); font-size:1rem; font-weight:300; color:rgba(255,255,255,0.65);">
+              <a href="mailto:info@dama24banqueting.it" style="color:rgba(255,255,255,0.65);">info@dama24banqueting.it</a>
+            </p>
+          </div>
         </div>
 
         <div>
@@ -2072,14 +2167,14 @@
             <div class="form__error" id="form-message" role="alert" aria-live="polite" style="display:none;"></div>
 
             <button type="submit" class="form__submit btn">
-              Ricevi una proposta personalizzata
+              Richiedi il tuo preventivo
             </button>
 
             <div class="form__trust" aria-label="Perché sceglierci">
               <span class="trust-item">Preventivo gratuito</span>
               <span class="trust-item">Risposta entro 24 ore</span>
-              <span class="trust-item">Progetto su misura</span>
-              <span class="trust-item">Servizio completo</span>
+              <span class="trust-item">Nessun impegno</span>
+              <span class="trust-item">Consulenza dedicata</span>
             </div>
           </form>
         </div>
@@ -2221,8 +2316,7 @@
                class="footer__logo"
                loading="lazy" />
           <p class="footer__tagline">
-            L'artigiano visionario del banqueting di lusso.<br/>
-            Ogni evento firmato Dama24 è un rituale di accoglienza.
+            Catering aziendale, banqueting ed eventi corporate a Milano.
           </p>
           <nav class="footer__social" aria-label="Seguici sui social">
             <a href="https://www.instagram.com/dama24banqueting"
@@ -2287,6 +2381,16 @@
             <a href="mailto:info@dama24banqueting.it">info@dama24banqueting.it</a>
           </address>
         </div>
+      </div>
+
+      <div class="footer__trust-bar">
+        <span class="footer__trust-item">Preventivo gratuito</span>
+        <span class="footer__trust-sep" aria-hidden="true">·</span>
+        <span class="footer__trust-item">Risposta entro 24 ore</span>
+        <span class="footer__trust-sep" aria-hidden="true">·</span>
+        <span class="footer__trust-item">Servizio personalizzato</span>
+        <span class="footer__trust-sep" aria-hidden="true">·</span>
+        <span class="footer__trust-item">Un unico referente per il tuo evento</span>
       </div>
 
       <div class="footer__bottom">
