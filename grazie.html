@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grazie — Dama24 Banqueting | La tua richiesta è stata ricevuta</title>
+  <meta name="description" content="Grazie per aver contattato Dama24 Banqueting. Abbiamo ricevuto la tua richiesta di preventivo e ti risponderemo entro 24 ore." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --black:    #010000;
+      --burgundy: #8c1822;
+      --white:    #ffffff;
+      --cream:    #faf8f5;
+      --mid-gray: #6b6b6b;
+      --serif:    'Cormorant Garamond', Georgia, serif;
+      --sans:     'Inter', system-ui, sans-serif;
+      --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--black);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--burgundy);
+      outline-offset: 3px;
+    }
+
+    /* Nav */
+    .nav {
+      padding: 1.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--cream);
+      border-bottom: 1px solid rgba(1,0,0,0.07);
+    }
+
+    .nav__logo { height: 36px; width: auto; }
+
+    /* Thank you main */
+    .thankyou {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 2rem;
+    }
+
+    .thankyou__inner {
+      max-width: 620px;
+      text-align: center;
+    }
+
+    .thankyou__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      border: 1px solid var(--burgundy);
+      border-radius: 50%;
+      margin: 0 auto 2.5rem;
+    }
+
+    .thankyou__checkmark {
+      width: 24px;
+      height: 24px;
+      stroke: var(--burgundy);
+      stroke-width: 1.5;
+      fill: none;
+      stroke-dasharray: 40;
+      stroke-dashoffset: 40;
+      animation: drawCheck 0.7s var(--ease-out) 0.3s forwards;
+    }
+
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .thankyou__label {
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .thankyou__title {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      margin-bottom: 1.5rem;
+    }
+
+    .thankyou__title em {
+      font-style: italic;
+      color: var(--burgundy);
+    }
+
+    .thankyou__text {
+      font-family: var(--serif);
+      font-size: 1.125rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--mid-gray);
+      margin-bottom: 2.5rem;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem auto;
+      max-width: 200px;
+    }
+    .divider__line { flex: 1; height: 1px; background: rgba(1,0,0,0.1); }
+    .divider__gem {
+      width: 5px;
+      height: 5px;
+      border: 1px solid var(--burgundy);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .thankyou__steps {
+      list-style: none;
+      text-align: left;
+      background: var(--white);
+      border: 1px solid rgba(1,0,0,0.08);
+      margin-bottom: 2.5rem;
+    }
+
+    .thankyou__step {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid rgba(1,0,0,0.06);
+      align-items: flex-start;
+    }
+    .thankyou__step:last-child { border-bottom: none; }
+
+    .thankyou__step-num {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--burgundy);
+      flex-shrink: 0;
+      width: 32px;
+    }
+
+    .thankyou__step-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--black);
+      margin-bottom: 0.25rem;
+    }
+
+    .thankyou__step-desc {
+      font-family: var(--serif);
+      font-size: 0.9375rem;
+      font-weight: 300;
+      color: var(--mid-gray);
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 1rem 2.25rem;
+      transition: all 0.3s var(--ease-out);
+      text-decoration: none;
+    }
+
+    .btn--outline {
+      border: 1px solid var(--black);
+      color: var(--black);
+    }
+    .btn--outline:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 2rem;
+      border-top: 1px solid rgba(1,0,0,0.07);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer__legal {
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      color: #aaa;
+    }
+
+    .footer__email a {
+      font-family: var(--serif);
+      font-size: 0.9375rem;
+      font-weight: 300;
+      color: var(--mid-gray);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .footer__email a:hover { color: var(--black); }
+
+    /* Animation entrance */
+    .thankyou__inner {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.7s var(--ease-out) 0.1s forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .nav { padding: 1.25rem; }
+      .thankyou { padding: 3rem 1.25rem; }
+      .footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav" aria-label="Navigazione">
+      <a href="/" aria-label="Torna alla home Dama24 Banqueting">
+        <img src="Loghi/logo_banqueting nero.svg"
+             alt="Dama24 Banqueting"
+             class="nav__logo" height="36" />
+      </a>
+    </nav>
+  </header>
+
+  <main class="thankyou" aria-labelledby="thankyou-title">
+    <div class="thankyou__inner">
+
+      <div class="thankyou__icon" aria-hidden="true">
+        <svg class="thankyou__checkmark" viewBox="0 0 24 24">
+          <polyline points="4 12 9 17 20 6" />
+        </svg>
+      </div>
+
+      <span class="thankyou__label">Richiesta ricevuta</span>
+
+      <h1 class="thankyou__title" id="thankyou-title">
+        Grazie per averci<br/>
+        <em>contattato</em>
+      </h1>
+
+      <p class="thankyou__text">
+        La tua richiesta di preventivo è stata ricevuta con successo.<br/>
+        Il nostro team ti risponderà entro <strong>24 ore lavorative</strong>
+        con una proposta personalizzata per il tuo evento.
+      </p>
+
+      <div class="divider" aria-hidden="true">
+        <span class="divider__line"></span>
+        <span class="divider__gem"></span>
+        <span class="divider__line"></span>
+      </div>
+
+      <ul class="thankyou__steps" aria-label="Prossimi passi">
+        <li class="thankyou__step">
+          <span class="thankyou__step-num">1</span>
+          <div>
+            <p class="thankyou__step-title">Ricezione e analisi</p>
+            <p class="thankyou__step-desc">Il nostro team legge attentamente la tua richiesta e analizza le esigenze del tuo evento.</p>
+          </div>
+        </li>
+        <li class="thankyou__step">
+          <span class="thankyou__step-num">2</span>
+          <div>
+            <p class="thankyou__step-title">Proposta personalizzata</p>
+            <p class="thankyou__step-desc">Entro 24 ore lavorative riceverai una proposta su misura, costruita attorno al tuo progetto.</p>
+          </div>
+        </li>
+        <li class="thankyou__step">
+          <span class="thankyou__step-num">3</span>
+          <div>
+            <p class="thankyou__step-title">Costruiamo insieme il tuo evento</p>
+            <p class="thankyou__step-desc">Lavoriamo con te per perfezionare ogni dettaglio, dalla cucina alla mise en place, fino all'atmosfera.</p>
+          </div>
+        </li>
+      </ul>
+
+      <a href="/" class="btn btn--outline" aria-label="Torna alla home">
+        ← Torna alla home
+      </a>
+
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p class="footer__legal">© 2024 DAMA24 S.r.l. — P.IVA 13885090962</p>
+    <p class="footer__email">
+      <a href="mailto:info@dama24banqueting.it">info@dama24banqueting.it</a>
+    </p>
+  </footer>
+
+</body>
+</html>

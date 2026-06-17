@@ -1,0 +1,2163 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dama24 Banqueting | Catering Aziendale Milano — Banqueting di Eccellenza</title>
+  <meta name="description" content="Dama24 Banqueting: catering aziendale a Milano per eventi corporate, convention, fiere e inaugurazioni. Banqueting di alta gamma con cucina sartoriale, mise en place d'autore e servizio impeccabile. Richiedi il tuo preventivo." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dama24 Banqueting | Catering Aziendale Milano" />
+  <meta property="og:description" content="Catering aziendale a Milano per eventi corporate, convention, fiere e inaugurazioni. Banqueting di alta gamma con cucina sartoriale e servizio impeccabile." />
+  <meta property="og:image" content="Immagini e video/catering.webp" />
+  <meta property="og:url" content="https://www.dama24banqueting.it/" />
+  <meta property="og:locale" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Dama24 Banqueting",
+    "description": "Catering aziendale a Milano per eventi corporate, convention, fiere e inaugurazioni.",
+    "url": "https://www.dama24banqueting.it/",
+    "email": "info@dama24banqueting.it",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Via della Chimica, 20/B",
+        "addressLocality": "Caponago",
+        "addressRegion": "MB",
+        "postalCode": "20867",
+        "addressCountry": "IT"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Leone XIII, 14",
+        "addressLocality": "Milano",
+        "postalCode": "20145",
+        "addressCountry": "IT"
+      }
+    ],
+    "servesCuisine": "Catering",
+    "areaServed": "Milano"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================
+       CSS Custom Properties
+    ========================================= */
+    :root {
+      --black:    #010000;
+      --burgundy: #8c1822;
+      --white:    #ffffff;
+      --cream:    #faf8f5;
+      --warm-gray:#f0ede8;
+      --mid-gray: #6b6b6b;
+      --light-text:#9a9a9a;
+      --border:   rgba(1,0,0,0.10);
+
+      --serif:  'Cormorant Garamond', Georgia, serif;
+      --sans:   'Inter', system-ui, sans-serif;
+
+      --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+    }
+
+    /* =========================================
+       Reset & Base
+    ========================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    img, video { max-width: 100%; display: block; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: inherit;
+    }
+
+    /* =========================================
+       Focus States (Accessibility)
+    ========================================= */
+    :focus-visible {
+      outline: 2px solid var(--burgundy);
+      outline-offset: 3px;
+    }
+
+    /* =========================================
+       Skip Link
+    ========================================= */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--burgundy);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      font-family: var(--sans);
+      font-size: 0.875rem;
+      z-index: 9999;
+      border-radius: 0 0 4px 4px;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* =========================================
+       Typography Helpers
+    ========================================= */
+    .label {
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+    }
+
+    .display {
+      font-family: var(--serif);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+    }
+
+    .body-refined {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: var(--mid-gray);
+    }
+
+    /* =========================================
+       Layout
+    ========================================= */
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .container--narrow {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* =========================================
+       Buttons
+    ========================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 1rem 2.25rem;
+      transition: all 0.35s var(--ease-out);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn--primary {
+      background: var(--burgundy);
+      color: var(--white);
+    }
+    .btn--primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--black);
+      transform: translateX(-101%);
+      transition: transform 0.4s var(--ease-out);
+      z-index: 0;
+    }
+    .btn--primary span { position: relative; z-index: 1; }
+    .btn--primary:hover::after { transform: translateX(0); }
+
+    .btn--outline {
+      border: 1px solid var(--black);
+      color: var(--black);
+    }
+    .btn--outline:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .btn--outline-white {
+      border: 1px solid rgba(255,255,255,0.6);
+      color: var(--white);
+    }
+    .btn--outline-white:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    /* =========================================
+       Navigation
+    ========================================= */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s var(--ease-out), padding 0.4s var(--ease-out), box-shadow 0.4s;
+    }
+
+    .nav.scrolled {
+      background: rgba(250,248,245,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 1.1rem 2rem;
+      box-shadow: 0 1px 0 var(--border);
+    }
+
+    .nav__logo {
+      height: 40px;
+      width: auto;
+      transition: opacity 0.3s;
+    }
+    .nav__logo:hover { opacity: 0.75; }
+
+    .nav__logo--white { display: block; }
+    .nav__logo--dark { display: none; }
+    .nav.scrolled .nav__logo--white { display: none; }
+    .nav.scrolled .nav__logo--dark { display: block; }
+
+    .nav__cta {
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.5);
+      padding: 0.6rem 1.5rem;
+      transition: all 0.3s var(--ease-out);
+    }
+    .nav.scrolled .nav__cta {
+      color: var(--black);
+      border-color: var(--black);
+    }
+    .nav__cta:hover {
+      background: var(--burgundy);
+      border-color: var(--burgundy);
+      color: var(--white);
+    }
+
+    /* =========================================
+       Hero
+    ========================================= */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 640px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero__media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero__video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(1,0,0,0.15) 0%,
+        rgba(1,0,0,0.02) 40%,
+        rgba(1,0,0,0.55) 75%,
+        rgba(1,0,0,0.78) 100%
+      );
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 0 2rem 5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .hero__label {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .hero__title {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(2.75rem, 6vw, 5.5rem);
+      line-height: 1.06;
+      color: var(--white);
+      max-width: 780px;
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero__title em {
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .hero__subtitle {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      color: rgba(255,255,255,0.75);
+      max-width: 520px;
+      line-height: 1.65;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      right: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      z-index: 1;
+    }
+
+    .hero__scroll-line {
+      width: 1px;
+      height: 56px;
+      background: rgba(255,255,255,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero__scroll-line::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.85);
+      animation: scrollDown 2s var(--ease-in-out) infinite;
+    }
+
+    @keyframes scrollDown {
+      0%   { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+
+    /* =========================================
+       Section Utility
+    ========================================= */
+    .section {
+      padding: 6rem 0;
+    }
+
+    .section--cream {
+      background: var(--cream);
+    }
+
+    .section--dark {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .section--warm {
+      background: var(--warm-gray);
+    }
+
+    .section__header {
+      margin-bottom: 4rem;
+    }
+
+    .section__header--center {
+      text-align: center;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 4rem;
+    }
+
+    .section__eyebrow {
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .section__title {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      margin-bottom: 1.25rem;
+    }
+
+    .section--dark .section__title { color: var(--white); }
+
+    .section__lead {
+      font-family: var(--serif);
+      font-size: 1.125rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--mid-gray);
+    }
+
+    .section--dark .section__lead { color: rgba(255,255,255,0.6); }
+
+    /* =========================================
+       Intro Strip
+    ========================================= */
+    .intro {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .intro__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .intro__text .section__title {
+      margin-bottom: 1.5rem;
+    }
+
+    .intro__blockquote {
+      border-left: 1px solid var(--burgundy);
+      padding-left: 1.75rem;
+    }
+
+    .intro__quote {
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 2.2vw, 1.625rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--black);
+    }
+
+    .intro__quote-author {
+      display: block;
+      margin-top: 1rem;
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+    }
+
+    /* =========================================
+       Numeri
+    ========================================= */
+    .numeri {
+      background: var(--cream);
+    }
+
+    .numeri__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .numeri__item {
+      padding: 3.5rem 2.5rem;
+      border-right: 1px solid var(--border);
+      text-align: center;
+      position: relative;
+    }
+    .numeri__item:last-child { border-right: none; }
+    .numeri__item:hover { background: var(--warm-gray); }
+
+    .numeri__number {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
+      line-height: 1;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+
+    .numeri__number sup {
+      font-size: 0.5em;
+      vertical-align: super;
+      color: var(--burgundy);
+    }
+
+    .numeri__note {
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+    }
+
+    /* =========================================
+       Servizi
+    ========================================= */
+    .servizi__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+    }
+
+    .servizi__card {
+      padding: 3rem 2.5rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s var(--ease-out);
+    }
+    .servizi__card:nth-child(3n) { border-right: none; }
+    .servizi__card:nth-last-child(-n+3) { border-bottom: none; }
+    .servizi__card:hover { background: var(--cream); }
+
+    .servizi__card-number {
+      font-family: var(--serif);
+      font-size: 0.875rem;
+      color: var(--light-text);
+      margin-bottom: 1.75rem;
+    }
+
+    .servizi__card-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 1.2;
+      color: var(--black);
+      margin-bottom: 1rem;
+    }
+
+    .servizi__card-body {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--mid-gray);
+    }
+
+    .servizi__card-tag {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-family: var(--sans);
+      font-size: 0.625rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      border-bottom: 1px solid var(--burgundy);
+      padding-bottom: 1px;
+    }
+
+    /* =========================================
+       Why Choose Us
+    ========================================= */
+    .why {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 640px;
+    }
+
+    .why__visual {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.8s var(--ease-out);
+    }
+    .why__visual:hover .why__image { transform: scale(1.04); }
+
+    .why__content {
+      background: var(--black);
+      padding: 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .why__content .section__title { color: var(--white); }
+    .why__content .section__eyebrow { color: rgba(255,255,255,0.4); }
+
+    .why__list {
+      list-style: none;
+      margin-top: 2.5rem;
+    }
+
+    .why__item {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .why__item:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+
+    .why__item-icon {
+      width: 2px;
+      height: 100%;
+      background: var(--burgundy);
+      flex-shrink: 0;
+      align-self: stretch;
+      margin-top: 0.25rem;
+    }
+
+    .why__item-marker {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.1rem;
+    }
+    .why__item-marker::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--burgundy);
+    }
+
+    .why__item-title {
+      font-family: var(--serif);
+      font-size: 1.0625rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+
+    .why__item-desc {
+      font-family: var(--serif);
+      font-size: 0.9375rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+
+    /* =========================================
+       Social Proof
+    ========================================= */
+    .social-proof {
+      padding: 6rem 0;
+      background: var(--cream);
+    }
+
+    .social-proof__note {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      color: var(--light-text);
+      font-style: italic;
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+      margin-top: 3.5rem;
+    }
+
+    .testimonial {
+      background: var(--cream);
+      padding: 2.75rem 2.5rem;
+    }
+
+    .testimonial__stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 1.25rem;
+    }
+    .testimonial__star {
+      width: 10px;
+      height: 10px;
+      background: var(--burgundy);
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+
+    .testimonial__text {
+      font-family: var(--serif);
+      font-size: 1.0625rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--black);
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial__author {
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+    }
+
+    .testimonial__author span {
+      color: var(--light-text);
+      font-weight: 300;
+      text-transform: none;
+      letter-spacing: 0;
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+    /* =========================================
+       Gallery
+    ========================================= */
+    .gallery {
+      padding: 6rem 0;
+    }
+
+    .gallery__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 8px;
+      margin-top: 3.5rem;
+    }
+
+    .gallery__item {
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .gallery__item:first-child {
+      grid-column: 1 / 3;
+      grid-row: 1 / 3;
+    }
+
+    .gallery__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s var(--ease-out);
+      aspect-ratio: 3/2;
+    }
+
+    .gallery__item:first-child .gallery__img {
+      aspect-ratio: unset;
+      height: 100%;
+      min-height: 480px;
+    }
+
+    .gallery__item:hover .gallery__img { transform: scale(1.06); }
+
+    .gallery__caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(1,0,0,0.55), transparent);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.3s var(--ease-out);
+    }
+    .gallery__item:hover .gallery__caption { opacity: 1; }
+
+    /* =========================================
+       Conversion / Form
+    ========================================= */
+    .conversion {
+      background: var(--black);
+      padding: 7rem 0;
+    }
+
+    .conversion__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .conversion__info {
+      padding-top: 0.5rem;
+    }
+
+    .conversion__info .section__title {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .conversion__lead {
+      font-family: var(--serif);
+      font-size: 1.0625rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 2.5rem;
+    }
+
+    .conversion__details {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .conversion__detail {
+      display: flex;
+      gap: 0.875rem;
+      align-items: flex-start;
+    }
+
+    .conversion__detail-label {
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      white-space: nowrap;
+      padding-top: 0.1rem;
+      min-width: 80px;
+    }
+
+    .conversion__detail-value {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .conversion__detail-value a:hover { color: var(--white); }
+
+    /* Form */
+    .form {
+      background: var(--cream);
+      padding: 2.75rem;
+    }
+
+    .form__title {
+      font-family: var(--serif);
+      font-size: 1.375rem;
+      font-weight: 400;
+      color: var(--black);
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .form__field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form__field--full {
+      grid-column: 1 / -1;
+    }
+
+    .form__label {
+      font-family: var(--sans);
+      font-size: 0.625rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+    }
+
+    .form__input,
+    .form__select,
+    .form__textarea {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--black);
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 0.875rem 1rem;
+      width: 100%;
+      transition: border-color 0.25s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .form__input:focus,
+    .form__select:focus,
+    .form__textarea:focus {
+      outline: none;
+      border-color: var(--burgundy);
+    }
+
+    .form__textarea { resize: vertical; min-height: 100px; }
+
+    .form__select-wrap {
+      position: relative;
+    }
+    .form__select-wrap::after {
+      content: '↓';
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.8rem;
+      color: var(--mid-gray);
+      pointer-events: none;
+    }
+
+    .form__privacy {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+
+    .form__checkbox {
+      width: 14px;
+      height: 14px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+      cursor: pointer;
+      accent-color: var(--burgundy);
+    }
+
+    .form__privacy-text {
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      font-weight: 300;
+      color: var(--mid-gray);
+      line-height: 1.5;
+    }
+
+    .form__privacy-text a {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .form__privacy-text a:hover { color: var(--black); }
+
+    .form__submit {
+      width: 100%;
+      padding: 1.1rem;
+      background: var(--burgundy);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: background 0.3s var(--ease-out);
+      margin-top: 0.5rem;
+    }
+    .form__submit:hover { background: var(--black); }
+    .form__submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* =========================================
+       FAQ
+    ========================================= */
+    .faq {
+      padding: 6rem 0;
+    }
+
+    .faq__list {
+      margin-top: 3.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .faq__item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq__question {
+      width: 100%;
+      text-align: left;
+      padding: 1.75rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--serif);
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: var(--black);
+      cursor: pointer;
+      transition: color 0.25s;
+    }
+    .faq__question:hover { color: var(--burgundy); }
+
+    .faq__icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .faq__icon::before,
+    .faq__icon::after {
+      content: '';
+      position: absolute;
+      background: currentColor;
+      transition: transform 0.3s var(--ease-out);
+    }
+    .faq__icon::before {
+      width: 100%;
+      height: 1px;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+    .faq__icon::after {
+      width: 1px;
+      height: 100%;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+
+    .faq__item.open .faq__icon::after { transform: translateX(-50%) rotate(90deg); }
+
+    .faq__answer {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s var(--ease-out);
+    }
+
+    .faq__answer-inner {
+      padding-bottom: 1.75rem;
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--mid-gray);
+      max-width: 720px;
+    }
+
+    /* =========================================
+       Footer
+    ========================================= */
+    .footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 5rem 0 2.5rem;
+    }
+
+    .footer__top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer__logo {
+      height: 36px;
+      width: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer__tagline {
+      font-family: var(--serif);
+      font-size: 0.9375rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer__social {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer__social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.55);
+      font-size: 0.75rem;
+      transition: all 0.3s;
+    }
+    .footer__social-link:hover {
+      border-color: var(--burgundy);
+      color: var(--white);
+      background: var(--burgundy);
+    }
+
+    .footer__col-title {
+      font-family: var(--sans);
+      font-size: 0.625rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer__nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+    }
+
+    .footer__nav a {
+      font-family: var(--serif);
+      font-size: 0.9375rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.25s;
+    }
+    .footer__nav a:hover { color: var(--white); }
+
+    .footer__address {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      font-style: normal;
+    }
+
+    .footer__address a {
+      color: rgba(255,255,255,0.55);
+      transition: color 0.25s;
+    }
+    .footer__address a:hover { color: var(--white); }
+
+    .footer__bottom {
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer__legal {
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .footer__links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer__links a {
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      color: rgba(255,255,255,0.35);
+      transition: color 0.25s;
+    }
+    .footer__links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* =========================================
+       Animations (IntersectionObserver)
+    ========================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-stagger > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+    }
+
+    .reveal-stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.05s; }
+    .reveal-stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.12s; }
+    .reveal-stagger.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.19s; }
+    .reveal-stagger.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.26s; }
+    .reveal-stagger.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.33s; }
+    .reveal-stagger.visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.40s; }
+
+    /* =========================================
+       Divider
+    ========================================= */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin: 1.5rem auto;
+      max-width: 240px;
+    }
+    .divider__line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .divider__gem {
+      width: 5px;
+      height: 5px;
+      border: 1px solid var(--burgundy);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    /* =========================================
+       Responsive
+    ========================================= */
+    @media (max-width: 1024px) {
+      .numeri__grid { grid-template-columns: repeat(2, 1fr); }
+      .numeri__item:nth-child(2) { border-right: none; }
+      .numeri__item:nth-child(1),
+      .numeri__item:nth-child(2) { border-bottom: 1px solid var(--border); }
+
+      .servizi__grid { grid-template-columns: repeat(2, 1fr); }
+      .servizi__card:nth-child(3n) { border-right: 1px solid var(--border); }
+      .servizi__card:nth-child(2n) { border-right: none; }
+      .servizi__card:nth-last-child(-n+2) { border-bottom: none; }
+      .servizi__card:nth-last-child(-n+3) { border-bottom: 1px solid var(--border); }
+
+      .why { grid-template-columns: 1fr; }
+      .why__content { padding: 4rem 3rem; }
+
+      .conversion__inner { grid-template-columns: 1fr; gap: 3rem; }
+
+      .footer__top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+
+      .intro__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .testimonials { grid-template-columns: 1fr; gap: 0; }
+    }
+
+    @media (max-width: 768px) {
+      .section { padding: 4rem 0; }
+
+      .hero__content { padding: 0 1.25rem 4rem; }
+
+      .numeri__grid { grid-template-columns: 1fr 1fr; }
+
+      .servizi__grid { grid-template-columns: 1fr; }
+      .servizi__card { border-right: none !important; }
+      .servizi__card:nth-last-child(-n+1) { border-bottom: none; }
+      .servizi__card:not(:last-child) { border-bottom: 1px solid var(--border); }
+
+      .gallery__grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+      .gallery__item:first-child {
+        grid-column: auto;
+        grid-row: auto;
+      }
+      .gallery__item:first-child .gallery__img { min-height: 260px; }
+
+      .why__content { padding: 3rem 1.5rem; }
+
+      .form { padding: 2rem 1.5rem; }
+      .form__grid { grid-template-columns: 1fr; }
+
+      .footer__top { grid-template-columns: 1fr; }
+
+      .footer__bottom { flex-direction: column; align-items: flex-start; }
+
+      .nav { padding: 1.25rem; }
+      .nav.scrolled { padding: 0.9rem 1.25rem; }
+    }
+
+    @media (max-width: 480px) {
+      .container, .container--narrow { padding: 0 1.25rem; }
+      .hero__actions { flex-direction: column; align-items: flex-start; }
+      .btn { padding: 0.9rem 1.75rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#preventivo">Vai al modulo di preventivo</a>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Navigazione principale">
+    <a href="/" aria-label="Dama24 Banqueting — torna alla home">
+      <img src="Loghi/logo_banqueting bianco.svg"
+           alt="Dama24 Banqueting"
+           class="nav__logo nav__logo--white"
+           height="40" />
+      <img src="Loghi/logo_banqueting nero.svg"
+           alt="Dama24 Banqueting"
+           class="nav__logo nav__logo--dark"
+           height="40" />
+    </a>
+    <a href="#preventivo" class="nav__cta" aria-label="Richiedi un preventivo">Richiedi preventivo</a>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" aria-label="Banner principale">
+    <div class="hero__media">
+      <video class="hero__video"
+             autoplay muted loop playsinline
+             aria-hidden="true"
+             poster="Immagini e video/catering.webp">
+        <source src="Immagini e video/video_banqueting e catering eventi.mp4" type="video/mp4" />
+      </video>
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="hero__content">
+      <span class="hero__label">Catering Aziendale · Milano</span>
+      <h1 class="hero__title">
+        L'artigiano visionario<br/>
+        del <em>banqueting di lusso</em>
+      </h1>
+      <p class="hero__subtitle">
+        Ogni evento firmato Dama24 è un rituale di accoglienza.<br/>
+        Cucina sartoriale, mise en place d'autore, servizio impeccabile.
+      </p>
+      <div class="hero__actions">
+        <a href="#preventivo" class="btn btn--primary">
+          <span>Richiedi il tuo preventivo</span>
+        </a>
+        <a href="#servizi" class="btn btn--outline-white">
+          Scopri i servizi
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ==================== INTRO ==================== -->
+  <section class="intro" aria-labelledby="intro-title">
+    <div class="container">
+      <div class="intro__inner">
+        <div class="intro__text">
+          <span class="label section__eyebrow">Visione</span>
+          <h2 class="section__title display" id="intro-title">
+            Un ecosistema integrato<br/>di servizio, atmosfera e gusto
+          </h2>
+          <p class="body-refined">
+            Banqueting sartoriale, mixology d'autore, progetti di evento su misura.
+            Ogni dettaglio è costruito intorno al tuo racconto — dalla cucina alla mise en place,
+            dal servizio all'atmosfera.
+          </p>
+        </div>
+        <div class="intro__blockquote reveal">
+          <blockquote class="intro__quote">
+            "Ogni evento è un'opera composta.<br/>
+            Nulla è replicato: tutto è costruito con intenzione."
+          </blockquote>
+          <cite class="intro__quote-author">— Dama24 Banqueting</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== NUMERI ==================== -->
+  <section class="numeri section" aria-labelledby="numeri-title">
+    <div class="container">
+      <div class="section__header--center reveal">
+        <span class="label section__eyebrow">In numeri</span>
+        <h2 class="section__title" id="numeri-title">L'eccellenza che si misura</h2>
+      </div>
+
+      <!-- NOTE: I seguenti numeri sono placeholder — aggiornare con dati verificati -->
+      <div class="numeri__grid reveal-stagger" role="list">
+        <div class="numeri__item" role="listitem">
+          <p class="numeri__number">—</p>
+          <p class="numeri__note">Anni di esperienza</p>
+        </div>
+        <div class="numeri__item" role="listitem">
+          <p class="numeri__number">—</p>
+          <p class="numeri__note">Clienti aziendali</p>
+        </div>
+        <div class="numeri__item" role="listitem">
+          <p class="numeri__number">—</p>
+          <p class="numeri__note">Eventi realizzati</p>
+        </div>
+        <div class="numeri__item" role="listitem">
+          <p class="numeri__number">—</p>
+          <p class="numeri__note">Persone servite ogni anno</p>
+        </div>
+      </div>
+
+      <p style="text-align:center; margin-top:1.5rem; font-family:var(--sans); font-size:0.6875rem; color:var(--light-text); font-style:italic;">
+        <!-- PLACEHOLDER: inserire dati verificati -->
+        I dati saranno aggiornati con le informazioni ufficiali.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== SERVIZI ==================== -->
+  <section class="section" id="servizi" aria-labelledby="servizi-title">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="label section__eyebrow">I nostri servizi</span>
+        <h2 class="section__title" id="servizi-title">
+          Catering aziendale Milano.<br/>
+          Ogni forma, ogni formato.
+        </h2>
+        <p class="section__lead" style="max-width:560px;">
+          Dall'evento corporate alla convention, dal coffee break alla cena di gala:
+          Dama24 disegna ogni esperienza su misura del tuo evento.
+        </p>
+      </div>
+
+      <div class="servizi__grid reveal-stagger">
+        <article class="servizi__card">
+          <p class="servizi__card-number">01</p>
+          <h3 class="servizi__card-title">Banqueting Aziendale</h3>
+          <p class="servizi__card-body">
+            Il cuore gastronomico dell'evento. Menù su misura, dal placée al buffet,
+            con una cucina consapevole che risponde a ogni esigenza senza rinunciare all'eccellenza.
+            La mise en place diventa scenografia con materiali ricercati e direzione artistica curata nei dettagli.
+          </p>
+          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Banqueting Aziendale">Richiedi preventivo</a>
+        </article>
+
+        <article class="servizi__card">
+          <p class="servizi__card-number">02</p>
+          <h3 class="servizi__card-title">Coffee Break &amp; Lunch Aziendali</h3>
+          <p class="servizi__card-body">
+            Anche il business trova la sua forma: coffee break eleganti, lunch funzionali
+            o lunchbox gourmet personalizzati, sempre sotto una regia di sala che trasforma
+            il servizio in un racconto di stile e accoglienza.
+          </p>
+          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Coffee Break">Richiedi preventivo</a>
+        </article>
+
+        <article class="servizi__card">
+          <p class="servizi__card-number">03</p>
+          <h3 class="servizi__card-title">Convention &amp; Fiere</h3>
+          <p class="servizi__card-body">
+            Catering per convention, fiere e grandi eventi aziendali a Milano e in tutta Italia.
+            Strutture modulari, servizio professionale e coordinamento completo per ospitare
+            da decine a migliaia di persone con la stessa cura artigianale.
+          </p>
+          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Convention e Fiere">Richiedi preventivo</a>
+        </article>
+
+        <article class="servizi__card">
+          <p class="servizi__card-number">04</p>
+          <h3 class="servizi__card-title">Inaugurazioni &amp; Opening</h3>
+          <p class="servizi__card-body">
+            Catering per inaugurazioni, opening e lanci di prodotto. Un servizio pensato
+            per fare della prima impressione un'esperienza memorabile, dove il gusto
+            incontra l'estetica del brand.
+          </p>
+          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Inaugurazioni">Richiedi preventivo</a>
+        </article>
+
+        <article class="servizi__card">
+          <p class="servizi__card-number">05</p>
+          <h3 class="servizi__card-title">Mixology d'Autore</h3>
+          <p class="servizi__card-body">
+            L'arte del bere come espressione estetica e sensoriale. L'Essential Cocktail Collection
+            reinterpreta i grandi classici con materie prime selezionate. Cocktail tailor-made
+            firmati da mixologist di livello internazionale, armonizzati con il tema dell'evento.
+          </p>
+          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Mixology">Richiedi preventivo</a>
+        </article>
+
+        <article class="servizi__card">
+          <p class="servizi__card-number">06</p>
+          <h3 class="servizi__card-title">Event Styling</h3>
+          <p class="servizi__card-body">
+            Dare forma e atmosfera all'evento. Dal design degli arredi al noleggio attrezzature,
+            dalle architetture temporanee alle scenografie di luce. Atmosfere sartoriali
+            create con musica live, creazioni floreali e fotografia d'autore.
+          </p>
+          <a href="#preventivo" class="servizi__card-tag" aria-label="Richiedi preventivo per Event Styling">Richiedi preventivo</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY CHOOSE US ==================== -->
+  <section class="why" aria-labelledby="why-title">
+    <div class="why__visual">
+      <img src="Immagini e video/catering2.webp"
+           alt="Mise en place raffinata Dama24 Banqueting — dettaglio di un tavolo allestito per un evento aziendale a Milano"
+           class="why__image"
+           loading="lazy" />
+    </div>
+    <div class="why__content">
+      <span class="label section__eyebrow" style="color:rgba(255,255,255,0.35);">Perché Dama24</span>
+      <h2 class="section__title" id="why-title">
+        Il lusso discreto<br/>dell'eccellenza sartoriale
+      </h2>
+
+      <ul class="why__list reveal-stagger" aria-label="Punti di forza Dama24">
+        <li class="why__item">
+          <span class="why__item-marker" aria-hidden="true"></span>
+          <div>
+            <h3 class="why__item-title">Cucina artigianale su misura</h3>
+            <p class="why__item-desc">
+              Ogni menù è composto attorno alle specificità dell'evento, del brand e degli ospiti.
+              Nulla è standardizzato, tutto è costruito con intenzione.
+            </p>
+          </div>
+        </li>
+        <li class="why__item">
+          <span class="why__item-marker" aria-hidden="true"></span>
+          <div>
+            <h3 class="why__item-title">Mise en place come scenografia</h3>
+            <p class="why__item-desc">
+              Materiali ricercati, direzione artistica curata nei dettagli.
+              La tavola diventa estensione visiva del tuo evento.
+            </p>
+          </div>
+        </li>
+        <li class="why__item">
+          <span class="why__item-marker" aria-hidden="true"></span>
+          <div>
+            <h3 class="why__item-title">Regia di sala impeccabile</h3>
+            <p class="why__item-desc">
+              Personale selezionato e formato secondo gli standard Dama24.
+              Professionalità, stile e discrezione in ogni contesto.
+            </p>
+          </div>
+        </li>
+        <li class="why__item">
+          <span class="why__item-marker" aria-hidden="true"></span>
+          <div>
+            <h3 class="why__item-title">Progettazione integrata</h3>
+            <p class="why__item-desc">
+              Un unico interlocutore per catering, mixology, styling e servizio.
+              Un ecosistema coordinato che libera l'azienda da ogni complessità organizzativa.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== SOCIAL PROOF ==================== -->
+  <section class="social-proof" aria-labelledby="proof-title">
+    <div class="container">
+      <div class="section__header--center reveal">
+        <span class="label section__eyebrow">Cosa dicono di noi</span>
+        <h2 class="section__title" id="proof-title">
+          La voce dei nostri clienti
+        </h2>
+        <p class="section__lead">
+          La nostra reputazione si costruisce evento dopo evento,
+          attraverso la soddisfazione di chi ci ha scelto.
+        </p>
+      </div>
+
+      <!-- PLACEHOLDER: Inserire testimonianze reali verificate -->
+      <div class="testimonials reveal-stagger">
+        <div class="testimonial">
+          <div class="testimonial__stars" aria-label="5 stelle su 5" role="img">
+            <span class="testimonial__star" aria-hidden="true"></span>
+            <span class="testimonial__star" aria-hidden="true"></span>
+            <span class="testimonial__star" aria-hidden="true"></span>
+            <span class="testimonial__star" aria-hidden="true"></span>
+            <span class="testimonial__star" aria-hidden="true"></span>
+          </div>
+          <p class="testimonial__text">
+            [Testimoniale — da inserire con fonte verificata]
+          </p>
+          <p class="testimonial__author">
+            [Nome Cliente]
+            <span>[Azienda — Ruolo]</span>
+          </p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial__stars" aria-label="5 stelle su 5" role="img">
+            <span class="testimonial__star" aria-hidden="true"></span>
+            <span class="testimonial__star" aria-hidden="true"></span>
+            <span class="testimonial__star" aria-hidden="true"></span>
+            <span class="testimonial__star" aria-hidden="true"></span>
+            <span class="testimonial__star" aria-hidden="true"></span>
+          </div>
+          <p class="testimonial__text">
+            [Testimoniale — da inserire con fonte verificata]
+          </p>
+          <p class="testimonial__author">
+            [Nome Cliente]
+            <span>[Azienda — Ruolo]</span>
+          </p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial__stars" aria-label="5 stelle su 5" role="img">
+            <span class="testimonial__star" aria-hidden="true"></span>
+            <span class="testimonial__star" aria-hidden="true"></span>
+            <span class="testimonial__star" aria-hidden="true"></span>
+            <span class="testimonial__star" aria-hidden="true"></span>
+            <span class="testimonial__star" aria-hidden="true"></span>
+          </div>
+          <p class="testimonial__text">
+            [Testimoniale — da inserire con fonte verificata]
+          </p>
+          <p class="testimonial__author">
+            [Nome Cliente]
+            <span>[Azienda — Ruolo]</span>
+          </p>
+        </div>
+      </div>
+
+      <p class="social-proof__note" role="note">
+        Placeholder — le testimonianze saranno sostituite con recensioni reali e verificate fornite dall'azienda.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== GALLERY ==================== -->
+  <section class="gallery" aria-labelledby="gallery-title">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="label section__eyebrow">Gallery</span>
+        <h2 class="section__title" id="gallery-title">
+          Ogni evento è un'opera composta
+        </h2>
+        <p class="section__lead">
+          Immagini che raccontano la cura sartoriale che Dama24 porta in ogni progetto.
+        </p>
+      </div>
+
+      <div class="gallery__grid">
+        <div class="gallery__item">
+          <img src="Immagini e video/catering.webp"
+               alt="Catering aziendale Dama24 — allestimento elegante per evento corporate a Milano"
+               class="gallery__img"
+               loading="lazy" />
+          <span class="gallery__caption">Banqueting aziendale · Milano</span>
+        </div>
+        <div class="gallery__item">
+          <img src="Immagini e video/catering2.webp"
+               alt="Mise en place Dama24 — dettaglio tavola allestita per evento"
+               class="gallery__img"
+               loading="lazy" />
+          <span class="gallery__caption">Mise en place d'autore</span>
+        </div>
+        <div class="gallery__item">
+          <img src="Immagini e video/catering3.webp"
+               alt="Catering Dama24 — servizio raffinato per convention aziendale"
+               class="gallery__img"
+               loading="lazy" />
+          <span class="gallery__caption">Catering per convention</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONVERSION / FORM ==================== -->
+  <section class="conversion" id="preventivo" aria-labelledby="form-title">
+    <div class="container">
+      <div class="conversion__inner">
+        <div class="conversion__info">
+          <span class="label section__eyebrow" style="color:rgba(255,255,255,0.35);">Richiesta preventivo</span>
+          <h2 class="section__title conversion__info-title" id="form-title">
+            Costruiamo insieme<br/>il tuo prossimo evento
+          </h2>
+          <p class="conversion__lead">
+            Scrivici e iniziamo a costruire il tuo progetto. Risponderemo entro 24 ore
+            con una proposta personalizzata per il tuo evento aziendale.
+          </p>
+
+          <ul class="conversion__details" aria-label="Contatti Dama24">
+            <li class="conversion__detail">
+              <span class="conversion__detail-label">Email</span>
+              <span class="conversion__detail-value">
+                <a href="mailto:info@dama24banqueting.it">info@dama24banqueting.it</a>
+              </span>
+            </li>
+            <li class="conversion__detail">
+              <span class="conversion__detail-label">Sede op.</span>
+              <span class="conversion__detail-value">
+                Via della Chimica, 20/B — 20867 Caponago (MB)
+              </span>
+            </li>
+            <li class="conversion__detail">
+              <span class="conversion__detail-label">Sede leg.</span>
+              <span class="conversion__detail-value">
+                Via Leone XIII, 14 — 20145 Milano
+              </span>
+            </li>
+            <li class="conversion__detail">
+              <span class="conversion__detail-label">P.IVA</span>
+              <span class="conversion__detail-value">13885090962</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <form class="form" id="lead-form" novalidate aria-labelledby="form-title">
+            <h3 class="form__title">Richiedi il preventivo</h3>
+            <div class="form__grid">
+              <div class="form__field">
+                <label class="form__label" for="nome">Nome *</label>
+                <input class="form__input" type="text" id="nome" name="nome"
+                       autocomplete="given-name" required
+                       aria-required="true"
+                       placeholder="Il tuo nome" />
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="cognome">Cognome *</label>
+                <input class="form__input" type="text" id="cognome" name="cognome"
+                       autocomplete="family-name" required
+                       aria-required="true"
+                       placeholder="Il tuo cognome" />
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="azienda">Azienda</label>
+                <input class="form__input" type="text" id="azienda" name="azienda"
+                       autocomplete="organization"
+                       placeholder="Nome azienda" />
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="citta">Città *</label>
+                <input class="form__input" type="text" id="citta" name="citta"
+                       required aria-required="true"
+                       placeholder="Città dell'evento" />
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="email">Email *</label>
+                <input class="form__input" type="email" id="email" name="email"
+                       autocomplete="email" required
+                       aria-required="true"
+                       placeholder="La tua email" />
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="telefono">Telefono</label>
+                <input class="form__input" type="tel" id="telefono" name="telefono"
+                       autocomplete="tel"
+                       placeholder="Numero di telefono" />
+              </div>
+
+              <div class="form__field form__field--full">
+                <label class="form__label" for="servizio">Servizio richiesto *</label>
+                <div class="form__select-wrap">
+                  <select class="form__select" id="servizio" name="servizio"
+                          required aria-required="true">
+                    <option value="">Seleziona il servizio</option>
+                    <option value="banqueting">Banqueting aziendale</option>
+                    <option value="coffee-break">Coffee Break &amp; Lunch</option>
+                    <option value="convention">Convention &amp; Fiere</option>
+                    <option value="inaugurazione">Inaugurazione &amp; Opening</option>
+                    <option value="mixology">Mixology</option>
+                    <option value="event-styling">Event Styling</option>
+                    <option value="altro">Altro / Non so ancora</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form__field form__field--full">
+                <label class="form__label" for="messaggio">Descrivi il tuo evento</label>
+                <textarea class="form__textarea" id="messaggio" name="messaggio"
+                          rows="4"
+                          placeholder="Raccontaci la data, il numero di ospiti, il tipo di evento e tutto ciò che ritieni utile."></textarea>
+              </div>
+
+              <div class="form__field form__field--full">
+                <div class="form__privacy">
+                  <input class="form__checkbox" type="checkbox"
+                         id="privacy" name="privacy"
+                         required aria-required="true" />
+                  <label class="form__privacy-text" for="privacy">
+                    Ho letto l'<a href="/privacy-policy" target="_blank" rel="noopener">informativa sulla privacy</a>
+                    e acconsento alla memorizzazione dei miei dati secondo il GDPR 679/2016. *
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div id="form-message" role="alert" aria-live="polite" style="display:none;"></div>
+
+            <button type="submit" class="form__submit btn" id="form-submit">
+              Invia la richiesta
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section class="faq section" aria-labelledby="faq-title">
+    <div class="container--narrow">
+      <div class="section__header--center reveal">
+        <span class="label section__eyebrow">FAQ</span>
+        <h2 class="section__title" id="faq-title">Domande frequenti</h2>
+        <p class="section__lead">
+          Tutto quello che vuoi sapere sul catering aziendale Dama24 prima di contattarci.
+        </p>
+      </div>
+
+      <div class="faq__list" role="list">
+        <div class="faq__item" role="listitem">
+          <button class="faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-1-answer"
+                  id="faq-1">
+            Quali tipologie di eventi aziendali gestite?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer" id="faq-1-answer" role="region" aria-labelledby="faq-1">
+            <p class="faq__answer-inner">
+              Dama24 gestisce ogni tipologia di evento aziendale: coffee break e lunch per meeting,
+              cene di gala, convention e conferenze, fiere e stand expo, inaugurazioni e opening,
+              lanci di prodotto, team building con esperienze gastronomiche e molto altro.
+              Ogni progetto viene sviluppato su misura, indipendentemente dalla scala.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq__item" role="listitem">
+          <button class="faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-2-answer"
+                  id="faq-2">
+            Operate solo a Milano o anche in altre città?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer" id="faq-2-answer" role="region" aria-labelledby="faq-2">
+            <p class="faq__answer-inner">
+              La nostra base operativa è a Milano e in Brianza, ma operiamo su tutto il territorio
+              nazionale per eventi che richiedono la nostra presenza. Contattaci per discutere
+              la logistica del tuo evento.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq__item" role="listitem">
+          <button class="faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-3-answer"
+                  id="faq-3">
+            Come funziona il processo di preventivo?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer" id="faq-3-answer" role="region" aria-labelledby="faq-3">
+            <p class="faq__answer-inner">
+              Compila il modulo con le informazioni essenziali sull'evento (data, luogo, numero di ospiti,
+              tipo di servizio desiderato). Entro 24 ore lavorative il nostro team ti risponde con
+              una proposta personalizzata. Da lì, lavoriamo insieme per perfezionare ogni dettaglio
+              fino a costruire un progetto che rispecchi esattamente la tua visione.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq__item" role="listitem">
+          <button class="faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-4-answer"
+                  id="faq-4">
+            Gestite anche il catering per fiere ed esposizioni?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer" id="faq-4-answer" role="region" aria-labelledby="faq-4">
+            <p class="faq__answer-inner">
+              Sì, il catering per fiere è uno dei nostri servizi core per il segmento aziendale.
+              Gestiamo la logistica complessa degli ambienti fieristici con strutture modulari,
+              personale formato e coordinamento totale, garantendo la stessa qualità di un evento
+              privato anche in contesti più articolati.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq__item" role="listitem">
+          <button class="faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-5-answer"
+                  id="faq-5">
+            Offrite anche il servizio di personale in somministrazione?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer" id="faq-5-answer" role="region" aria-labelledby="faq-5">
+            <p class="faq__answer-inner">
+              Sì. La divisione Dama24 Resources è pensata per valorizzare l'esperienza di hotel,
+              ristoranti, strutture ricettive ed eventi privati. Il personale è selezionato e
+              formato secondo gli standard Dama24 e si integra con naturalezza in ogni contesto,
+              portando professionalità, stile e discrezione.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq__item" role="listitem">
+          <button class="faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-6-answer"
+                  id="faq-6">
+            È possibile personalizzare il menù per esigenze alimentari specifiche?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer" id="faq-6-answer" role="region" aria-labelledby="faq-6">
+            <p class="faq__answer-inner">
+              Assolutamente. La nostra cucina è "consapevole": ogni menù risponde alle esigenze
+              degli ospiti — intolleranze, preferenze vegetariane, vegane o culturali — senza
+              mai rinunciare all'eccellenza. La personalizzazione è parte integrante del nostro processo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <img src="Loghi/logo_banqueting bianco.svg"
+               alt="Dama24 Banqueting"
+               class="footer__logo"
+               loading="lazy" />
+          <p class="footer__tagline">
+            L'artigiano visionario del banqueting di lusso.<br/>
+            Ogni evento firmato Dama24 è un rituale di accoglienza.
+          </p>
+          <nav class="footer__social" aria-label="Seguici sui social">
+            <a href="https://www.instagram.com/dama24banqueting"
+               class="footer__social-link"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Instagram Dama24 Banqueting">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/dama24banqueting"
+               class="footer__social-link"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Facebook Dama24 Banqueting">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/dama24banqueting"
+               class="footer__social-link"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="LinkedIn Dama24 Banqueting">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Servizi</p>
+          <ul class="footer__nav" aria-label="Servizi Dama24">
+            <li><a href="#servizi">Banqueting Aziendale</a></li>
+            <li><a href="#servizi">Coffee Break &amp; Lunch</a></li>
+            <li><a href="#servizi">Convention &amp; Fiere</a></li>
+            <li><a href="#servizi">Inaugurazioni</a></li>
+            <li><a href="#servizi">Mixology</a></li>
+            <li><a href="#servizi">Event Styling</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Azienda</p>
+          <ul class="footer__nav" aria-label="Pagine aziendali">
+            <li><a href="https://www.dama24banqueting.it/visione" target="_blank" rel="noopener">Visione</a></li>
+            <li><a href="https://www.dama24banqueting.it/esperienze" target="_blank" rel="noopener">Esperienze</a></li>
+            <li><a href="https://www.dama24banqueting.it/risorse" target="_blank" rel="noopener">Resources</a></li>
+            <li><a href="https://www.dama24banqueting.it/" target="_blank" rel="noopener">Sito ufficiale</a></li>
+            <li><a href="mailto:info@dama24banqueting.it">Contatti</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Dove siamo</p>
+          <address class="footer__address">
+            <strong style="font-style:normal; color:rgba(255,255,255,0.65); font-family:var(--sans); font-size:0.6875rem; letter-spacing:0.08em; text-transform:uppercase;">Sede operativa</strong><br/>
+            Via della Chimica, 20/B<br/>
+            20867 Caponago (MB)<br/><br/>
+            <strong style="font-style:normal; color:rgba(255,255,255,0.65); font-family:var(--sans); font-size:0.6875rem; letter-spacing:0.08em; text-transform:uppercase;">Sede legale</strong><br/>
+            Via Leone XIII, 14<br/>
+            20145 Milano<br/><br/>
+            <a href="mailto:info@dama24banqueting.it">info@dama24banqueting.it</a>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__legal">
+          © 2024 DAMA24 S.r.l. — P.IVA 13885090962
+        </p>
+        <nav class="footer__links" aria-label="Link legali">
+          <a href="https://www.dama24banqueting.it/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="https://www.dama24banqueting.it/cookie-policy" target="_blank" rel="noopener">Cookie Policy</a>
+          <a href="https://www.dama24banqueting.it/lavora-con-noi" target="_blank" rel="noopener">Lavora con noi</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    // Nav scroll state
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Intersection Observer — reveal animations
+    const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(el => observer.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('visible'));
+    }
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq__question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq__item');
+        const answer = item.querySelector('.faq__answer');
+        const isOpen = item.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq__item.open').forEach(openItem => {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq__answer').style.maxHeight = null;
+          openItem.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Form submission
+    const form = document.getElementById('lead-form');
+    const submitBtn = document.getElementById('form-submit');
+    const formMessage = document.getElementById('form-message');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const required = form.querySelectorAll('[required]');
+      let valid = true;
+
+      required.forEach(field => {
+        field.style.borderColor = '';
+        if (!field.value.trim() || (field.type === 'checkbox' && !field.checked)) {
+          field.style.borderColor = '#8c1822';
+          valid = false;
+        }
+      });
+
+      if (!valid) {
+        formMessage.style.display = 'block';
+        formMessage.style.cssText = 'display:block; padding:0.75rem 1rem; margin-top:1rem; background:#fff0f0; border:1px solid #8c1822; font-family:var(--sans); font-size:0.75rem; color:#8c1822;';
+        formMessage.textContent = 'Compila tutti i campi obbligatori contrassegnati con *.';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Invio in corso...';
+
+      // Redirect to thank you page
+      // In production: replace with actual form submission (AJAX/fetch to backend)
+      setTimeout(() => {
+        window.location.href = 'grazie.html';
+      }, 600);
+    });
+  </script>
+</body>
+</html>
