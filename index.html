@@ -409,7 +409,7 @@
 
     /* Dark form variant (hero) */
     .form--dark .form__label {
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.65);
     }
 
     .form--dark .form__label abbr {
@@ -419,9 +419,9 @@
     .form--dark .form__input,
     .form--dark .form__select,
     .form--dark .form__textarea {
-      background: rgba(255,255,255,0.05);
-      border-color: rgba(255,255,255,0.10);
-      border-bottom-color: rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(255,255,255,0.14);
+      border-bottom-color: rgba(255,255,255,0.22);
       color: var(--white);
     }
 
@@ -435,7 +435,7 @@
     .form--dark .form__input::placeholder,
     .form--dark .form__select::placeholder,
     .form--dark .form__textarea::placeholder {
-      color: rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.4);
     }
 
     .form--dark .form__input:focus,
@@ -1122,6 +1122,7 @@
     /* Form */
     .form {
       background: var(--cream);
+      color: var(--black);
       padding: 2.75rem;
     }
 
@@ -1187,6 +1188,12 @@
       appearance: none;
       -webkit-appearance: none;
       border-radius: 0;
+    }
+
+    .form__input::placeholder,
+    .form__select::placeholder,
+    .form__textarea::placeholder {
+      color: rgba(1,0,0,0.35);
     }
 
     .form__input:hover,
