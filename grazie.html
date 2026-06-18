@@ -297,13 +297,14 @@
     .footer__legal a:hover { color: var(--white); }
 
     .footer__trust {
-      display: grid;
-      grid-template-columns: repeat(3, auto);
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 0.5rem 2rem;
-      padding-top: 1.25rem;
+      align-items: center;
+      gap: 0.625rem 2.5rem;
+      padding: 1.75rem 0;
       border-top: 1px solid rgba(255,255,255,0.08);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
       text-align: center;
     }
 
@@ -473,7 +474,6 @@
             <ul class="footer__contact-list">
               <li><a href="/privacy-policy">Privacy Policy</a></li>
               <li><a href="/cookie-policy">Cookie Policy</a></li>
-              <li><a href="/haccp">Autorizzazioni HACCP</a></li>
             </ul>
           </nav>
         </div>
@@ -487,11 +487,10 @@
         <li class="footer__trust-item">Un unico referente per il tuo evento</li>
       </ul>
 
-      <!-- Legal links + copyright -->
+      <!-- Bottom: HACCP + copyright -->
       <div class="footer__bottom">
-        <nav class="footer__legal-links" aria-label="Link legali">
-          <a href="/privacy-policy">Privacy Policy</a>
-          <a href="/cookie-policy">Cookie Policy</a>
+        <nav class="footer__legal-links" aria-label="Certificazioni">
+          <a href="/haccp">Autorizzazioni HACCP</a>
         </nav>
         <p class="footer__copy">© 2026 DAMA24 S.r.l. — P.IVA 13885090962</p>
       </div>
