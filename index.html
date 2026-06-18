@@ -1673,34 +1673,63 @@
       font-size: 0.875rem;
     }
 
-    .footer__bottom {
-      padding-top: 2rem;
+    .footer__trust-bar {
+      list-style: none;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
       flex-wrap: wrap;
-      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      gap: 0.625rem 2.5rem;
+      padding: 1.75rem 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .footer__trust-bar .footer__trust-item {
+      font-family: var(--sans);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      padding: 0;
+    }
+
+    .footer__trust-bar .footer__trust-item::before {
+      content: '✓ ';
+      color: var(--bordeaux);
+    }
+
+    .footer__bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.625rem;
     }
 
     .footer__legal {
       font-family: var(--sans);
-      font-size: 0.875rem;
-      font-weight: 300;
+      font-size: 0.75rem;
+      font-weight: 400;
       color: rgba(255,255,255,0.3);
+      text-align: center;
     }
 
     .footer__links {
       display: flex;
-      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.25rem 1.25rem;
     }
 
     .footer__links a {
       font-family: var(--sans);
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.35);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.45);
       transition: color 0.25s;
     }
-    .footer__links a:hover { color: rgba(255,255,255,0.7); }
+    .footer__links a:hover { color: var(--white); }
 
     /* =========================================
        Animations (IntersectionObserver)
@@ -2893,14 +2922,22 @@
       </div>
 
 
+      <!-- Trust bar -->
+      <ul class="footer__trust-bar" aria-label="Garanzie di servizio">
+        <li class="footer__trust-item">Preventivo gratuito</li>
+        <li class="footer__trust-item">Risposta entro 24 ore</li>
+        <li class="footer__trust-item">Servizio personalizzato</li>
+        <li class="footer__trust-item">Un unico referente per il tuo evento</li>
+      </ul>
+
+      <!-- Bottom: HACCP + legal + copyright -->
       <div class="footer__bottom">
-        <p class="footer__legal">
-          © 2026 DAMA24 S.r.l. — P.IVA 13885090962
-        </p>
-        <nav class="footer__links" aria-label="Link legali">
+        <nav class="footer__links" aria-label="Certificazioni e link legali">
+          <a href="/haccp">Autorizzazioni HACCP</a>
           <a href="https://www.dama24banqueting.it/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
           <a href="https://www.dama24banqueting.it/cookie-policy" target="_blank" rel="noopener">Cookie Policy</a>
         </nav>
+        <p class="footer__legal">© 2026 DAMA24 S.r.l. — P.IVA 13885090962</p>
       </div>
     </div>
   </footer>
