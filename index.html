@@ -868,15 +868,15 @@
     .why__visual:hover .why__image { transform: scale(1.04); }
 
     .why__content {
-      background: linear-gradient(145deg, #0d0305 0%, var(--black) 40%, #1a0508 100%);
+      background: #F5F3EC;
       padding: 5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
-    .why__content .section__title { color: var(--white); }
-    .why__content .section__eyebrow { color: rgba(255,255,255,0.4); }
+    .why__content .section__title { color: var(--black); }
+    .why__content .section__eyebrow { color: var(--bordeaux); }
 
     .why__list {
       list-style: none;
@@ -925,7 +925,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      color: var(--white);
+      color: var(--black);
       margin-bottom: 0.25rem;
     }
 
@@ -933,7 +933,7 @@
       font-family: var(--serif);
       font-size: 0.9375rem;
       font-weight: 300;
-      color: rgba(255,255,255,0.5);
+      color: rgba(0,0,0,0.6);
       line-height: 1.6;
     }
 
@@ -1854,12 +1854,12 @@
       border-left: 3px solid var(--bordeaux);
     }
 
-    /* 4. Why section — text-shadow sulle voci per profondità */
-    .why__item-title {
-      text-shadow: 0 1px 8px rgba(0,0,0,0.45);
+    /* 4. Why section — item borders su sfondo avorio */
+    .why__item {
+      border-bottom-color: rgba(0,0,0,0.10);
     }
-    .why__item-desc {
-      text-shadow: 0 1px 6px rgba(0,0,0,0.35);
+    .why__item:first-child {
+      border-top-color: rgba(0,0,0,0.10);
     }
 
     /* 5. Manifesto / intro quote — virgolette decorative bordeaux semitrasparenti */
