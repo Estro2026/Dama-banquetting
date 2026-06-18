@@ -207,159 +207,121 @@
       background-size: auto, 400px auto;
       background-repeat: repeat, repeat;
       color: var(--white);
-      padding: 3.5rem 2rem 2rem;
+      padding: 5rem 2rem 2.5rem;
     }
 
     .footer__inner {
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
     .footer__top {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 2.5rem;
-      padding-bottom: 2.5rem;
-      margin-bottom: 2rem;
+      gap: 3rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .footer__logo {
-      height: 52px;
+      height: 36px;
       min-height: 12mm;
       width: auto;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       display: block;
     }
 
     .footer__tagline {
       font-family: var(--font-display);
-      font-size: 0.9rem;
+      font-size: 0.9375rem;
+      font-weight: 300;
       font-style: italic;
-      font-weight: 400;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.5);
       line-height: 1.6;
-      white-space: nowrap;
+      margin-bottom: 1.5rem;
     }
 
     .footer__col-title {
       font-family: var(--font-sub);
-      font-size: 0.75rem;
-      font-weight: 700;
+      font-size: 0.625rem;
+      font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 1rem;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1.25rem;
     }
 
     .footer__contact-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.625rem;
     }
 
-    .footer__contact-list li {
-      font-family: var(--font-sub);
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.5;
-    }
-
+    .footer__contact-list li,
     .footer__contact-list a {
-      color: rgba(255,255,255,0.8);
-      transition: color 0.2s;
+      font-family: var(--font-display);
+      font-size: 0.9375rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+      transition: color 0.25s;
     }
     .footer__contact-list a:hover { color: var(--white); }
 
     .footer__address {
-      font-family: var(--font-sub);
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.75;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
       font-style: normal;
     }
 
-    .footer__legal {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .footer__legal a {
-      font-family: var(--font-sub);
-      font-size: 0.8125rem;
-      font-weight: 400;
+    .footer__address a {
       color: rgba(255,255,255,0.55);
-      transition: color 0.2s;
+      transition: color 0.25s;
     }
-    .footer__legal a:hover { color: var(--white); }
-
-    .footer__trust {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 0.625rem 2.5rem;
-      padding: 1.75rem 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    .footer__trust-item {
-      font-family: var(--font-sub);
-      font-size: 0.6875rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-    }
-
-    .footer__trust-item::before {
-      content: '✓ ';
-      color: var(--bordeaux);
-      opacity: 0.8;
-    }
+    .footer__address a:hover { color: var(--white); }
 
     .footer__bottom {
+      padding-top: 2rem;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      gap: 0.625rem;
-    }
-
-    .footer__legal-links {
-      display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.25rem 1.25rem;
+      gap: 1rem;
     }
 
-    .footer__legal-links a {
+    .footer__legal {
       font-family: var(--font-sub);
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: rgba(255,255,255,0.45);
-      transition: color 0.2s;
-    }
-    .footer__legal-links a:hover { color: var(--white); }
-
-    .footer__copy {
-      font-family: var(--font-sub);
-      font-size: 0.75rem;
-      font-weight: 400;
+      font-size: 0.6875rem;
+      font-weight: 300;
       color: rgba(255,255,255,0.3);
-      text-align: center;
     }
+
+    .footer__links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer__links a {
+      font-family: var(--font-sub);
+      font-size: 0.6875rem;
+      color: rgba(255,255,255,0.35);
+      transition: color 0.25s;
+    }
+    .footer__links a:hover { color: rgba(255,255,255,0.7); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .footer__top { grid-template-columns: 1fr; gap: 2rem; }
+      .footer__top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .footer__bottom { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
       .ty__steps { text-align: left; }
       .ty__social { flex-wrap: wrap; }
+    }
+    @media (max-width: 480px) {
+      .footer__top { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 480px) {
@@ -448,7 +410,9 @@
                alt="Dama24 Banqueting"
                class="footer__logo"
                loading="lazy" />
-          <p class="footer__tagline">Catering aziendale, banqueting ed eventi corporate a&nbsp;Milano.</p>
+          <p class="footer__tagline">
+            Catering aziendale, banqueting ed eventi corporate a&nbsp;Milano.
+          </p>
         </div>
 
         <!-- Contatti -->
@@ -459,10 +423,10 @@
           </ul>
           <br/>
           <address class="footer__address">
-            <strong style="font-style:normal; color:rgba(255,255,255,0.55); font-size:0.6875rem; letter-spacing:0.08em; text-transform:uppercase;">Sede operativa</strong><br/>
+            <strong style="font-style:normal; color:rgba(255,255,255,0.65); font-family:var(--font-sub); font-size:0.6875rem; letter-spacing:0.08em; text-transform:uppercase;">Sede operativa</strong><br/>
             Via della Chimica, 20/B<br/>
             20867 Caponago (MB)<br/><br/>
-            <strong style="font-style:normal; color:rgba(255,255,255,0.55); font-size:0.6875rem; letter-spacing:0.08em; text-transform:uppercase;">Sede legale</strong><br/>
+            <strong style="font-style:normal; color:rgba(255,255,255,0.65); font-family:var(--font-sub); font-size:0.6875rem; letter-spacing:0.08em; text-transform:uppercase;">Sede legale</strong><br/>
             Via Leone XIII, 14<br/>
             20145 Milano
           </address>
@@ -471,29 +435,21 @@
         <!-- Informazioni legali -->
         <div>
           <p class="footer__col-title">Informazioni legali</p>
-          <nav aria-label="Link legali">
-            <ul class="footer__contact-list">
-              <li><a href="/privacy-policy">Privacy Policy</a></li>
-              <li><a href="/cookie-policy">Cookie Policy</a></li>
-            </ul>
-          </nav>
+          <ul class="footer__contact-list">
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+            <li><a href="/haccp">Autorizzazioni HACCP</a></li>
+          </ul>
         </div>
       </div>
 
-      <!-- Trust bar -->
-      <ul class="footer__trust" aria-label="Garanzie di servizio">
-        <li class="footer__trust-item">Preventivo gratuito</li>
-        <li class="footer__trust-item">Risposta entro 24 ore</li>
-        <li class="footer__trust-item">Servizio personalizzato</li>
-        <li class="footer__trust-item">Un unico referente per il tuo evento</li>
-      </ul>
-
-      <!-- Bottom: HACCP + copyright -->
       <div class="footer__bottom">
-        <nav class="footer__legal-links" aria-label="Certificazioni">
+        <p class="footer__legal">© 2026 DAMA24 S.r.l. — P.IVA 13885090962</p>
+        <nav class="footer__links" aria-label="Link legali">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/cookie-policy">Cookie Policy</a>
           <a href="/haccp">Autorizzazioni HACCP</a>
         </nav>
-        <p class="footer__copy">© 2026 DAMA24 S.r.l. — P.IVA 13885090962</p>
       </div>
 
     </div>
