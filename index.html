@@ -1560,7 +1560,7 @@
 
     .footer__top {
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      grid-template-columns: 1.5fr 1fr 1fr;
       gap: 3rem;
       padding-bottom: 3.5rem;
       border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -1630,6 +1630,25 @@
       transition: color 0.25s;
     }
     .footer__nav a:hover { color: var(--white); }
+
+    .footer__contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer__contact-list li {
+      font-family: var(--font-sub);
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.5;
+    }
+    .footer__contact-list a {
+      color: rgba(255,255,255,0.8);
+      transition: color 0.2s;
+    }
+    .footer__contact-list a:hover { color: var(--white); }
 
     .footer__address {
       font-family: var(--serif);
@@ -1800,7 +1819,7 @@
 
       .conversion__inner { grid-template-columns: 1fr; gap: 3rem; }
 
-      .footer__top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .footer__top { grid-template-columns: 1fr 1fr; gap: 2rem; }
 
       .intro__inner { grid-template-columns: 1fr; gap: 2.5rem; }
 
@@ -1840,7 +1859,7 @@
 
       .footer__top { grid-template-columns: 1fr; }
 
-      .footer__bottom { flex-direction: column; align-items: flex-start; }
+      .footer__bottom { align-items: center; }
 
       .nav { padding: 1.25rem; }
       .nav.scrolled { padding: 0.9rem 1.25rem; }
@@ -2850,6 +2869,7 @@
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__top">
+        <!-- Brand + social -->
         <div>
           <img src="Loghi/logo_banqueting bianco.svg"
                alt="Dama24 Banqueting"
@@ -2886,38 +2906,32 @@
           </nav>
         </div>
 
+        <!-- Contatti -->
         <div>
-          <p class="footer__col-title">Servizi</p>
-          <ul class="footer__nav" aria-label="Servizi Dama24">
-            <li><a href="#servizi">Catering Aziendale</a></li>
-            <li><a href="#servizi">Banqueting</a></li>
-            <li><a href="#servizi">Bar Catering</a></li>
-            <li><a href="#servizi">Allestimenti &amp; Intrattenimento</a></li>
+          <p class="footer__col-title">Contatti</p>
+          <ul class="footer__contact-list">
+            <li><a href="mailto:info@dama24banqueting.it">info@dama24banqueting.it</a></li>
           </ul>
-        </div>
-
-        <div>
-          <p class="footer__col-title">Navigazione</p>
-          <ul class="footer__nav" aria-label="Sezioni della pagina">
-            <li><a href="#servizi">I nostri servizi</a></li>
-            <li><a href="#preventivo">Richiedi un preventivo</a></li>
-            <li><a href="#faq">Domande frequenti</a></li>
-            <li><a href="mailto:info@dama24banqueting.it">Contatti</a></li>
-            <li><a href="https://www.dama24banqueting.it/" target="_blank" rel="noopener">Sito ufficiale</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="footer__col-title">Dove siamo</p>
+          <br/>
           <address class="footer__address">
-            <strong style="font-style:normal; color:rgba(255,255,255,0.65); font-family:var(--sans); font-size:0.6875rem; letter-spacing:0.08em; text-transform:uppercase;">Sede operativa</strong><br/>
+            <strong style="font-style:normal; color:rgba(255,255,255,0.55); font-family:var(--sans); font-size:0.6875rem; letter-spacing:0.08em; text-transform:uppercase;">Sede operativa</strong><br/>
             Via della Chimica, 20/B<br/>
             20867 Caponago (MB)<br/><br/>
-            <strong style="font-style:normal; color:rgba(255,255,255,0.65); font-family:var(--sans); font-size:0.6875rem; letter-spacing:0.08em; text-transform:uppercase;">Sede legale</strong><br/>
+            <strong style="font-style:normal; color:rgba(255,255,255,0.55); font-family:var(--sans); font-size:0.6875rem; letter-spacing:0.08em; text-transform:uppercase;">Sede legale</strong><br/>
             Via Leone XIII, 14<br/>
-            20145 Milano<br/><br/>
-            <a href="mailto:info@dama24banqueting.it">info@dama24banqueting.it</a>
+            20145 Milano
           </address>
+        </div>
+
+        <!-- Informazioni legali -->
+        <div>
+          <p class="footer__col-title">Informazioni legali</p>
+          <nav aria-label="Link legali">
+            <ul class="footer__contact-list">
+              <li><a href="https://www.dama24banqueting.it/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></li>
+              <li><a href="https://www.dama24banqueting.it/cookie-policy" target="_blank" rel="noopener">Cookie Policy</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
 
@@ -2930,12 +2944,10 @@
         <li class="footer__trust-item">Un unico referente per il tuo evento</li>
       </ul>
 
-      <!-- Bottom: HACCP + legal + copyright -->
+      <!-- Bottom: HACCP + copyright -->
       <div class="footer__bottom">
-        <nav class="footer__links" aria-label="Certificazioni e link legali">
+        <nav class="footer__links" aria-label="Certificazioni">
           <a href="/haccp">Autorizzazioni HACCP</a>
-          <a href="https://www.dama24banqueting.it/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
-          <a href="https://www.dama24banqueting.it/cookie-policy" target="_blank" rel="noopener">Cookie Policy</a>
         </nav>
         <p class="footer__legal">© 2026 DAMA24 S.r.l. — P.IVA 13885090962</p>
       </div>
